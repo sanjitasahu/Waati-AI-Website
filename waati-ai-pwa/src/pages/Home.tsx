@@ -303,7 +303,7 @@ const Home: React.FC = () => {
             variant="contained"
             size="large"
             component={RouterLink}
-            to="/register"
+            to="/contact"
             sx={{
               backgroundColor: 'white',
               color: 'primary.main',
