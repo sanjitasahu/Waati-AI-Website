@@ -9,12 +9,14 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Courses from './pages/Courses';
 import Consulting from './pages/Consulting';
+import Growth from './pages/Growth';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
+import NorthEastIndia from './pages/NorthEastIndia';
 
 const theme = createTheme({
   palette: {
@@ -79,26 +81,28 @@ const theme = createTheme({
 
 const queryClient = new QueryClient();
 
-function App() {
+const App: React.FC = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <AuthProvider>
           <Router>
-            <div className="App">
+            <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
               <Navbar />
-              <main>
+              <main style={{ flex: 1 }}>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/courses" element={<Courses />} />
                   <Route path="/consulting" element={<Consulting />} />
+                  <Route path="/growth" element={<Growth />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/register" element={<Register />} />
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/profile" element={<Profile />} />
+                  <Route path="/north-east-india" element={<NorthEastIndia />} />
                 </Routes>
               </main>
               <Footer />
@@ -108,6 +112,6 @@ function App() {
       </ThemeProvider>
     </QueryClientProvider>
   );
-}
+};
 
 export default App;

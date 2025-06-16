@@ -9,11 +9,22 @@ import {
   CardActions,
   Avatar,
 } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
+import { styled } from '@mui/material/styles';
 import SchoolIcon from '@mui/icons-material/School';
 import BusinessIcon from '@mui/icons-material/Business';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import StarIcon from '@mui/icons-material/Star';
+
+const StyledLink = styled(RouterLink)(({ theme }) => ({
+  color: 'inherit',
+  textDecoration: 'none',
+  borderBottom: '1px solid transparent',
+  transition: 'border-color 0.2s',
+  '&:hover': {
+    borderColor: 'currentColor'
+  }
+}));
 
 const Home: React.FC = () => {
   const features = [
@@ -21,16 +32,19 @@ const Home: React.FC = () => {
       icon: <SchoolIcon sx={{ fontSize: 40 }} />,
       title: 'Expert-Led Courses',
       description: 'Learn from industry experts with hands-on AI and machine learning courses.',
+      link: '/courses'
     },
     {
       icon: <BusinessIcon sx={{ fontSize: 40 }} />,
       title: 'Business Consulting',
       description: 'Transform your business with our AI consulting and implementation services.',
+      link: '/consulting'
     },
     {
       icon: <TrendingUpIcon sx={{ fontSize: 40 }} />,
       title: 'Growth-Focused',
       description: 'Strategies designed to accelerate your business growth through AI adoption.',
+      link: '/growth'
     },
   ];
 
@@ -122,7 +136,7 @@ const Home: React.FC = () => {
             <Button
               variant="contained"
               size="large"
-              component={Link}
+              component={RouterLink}
               to="/courses"
               sx={{
                 backgroundColor: 'primary.main',
@@ -135,7 +149,7 @@ const Home: React.FC = () => {
             <Button
               variant="outlined"
               size="large"
-              component={Link}
+              component={RouterLink}
               to="/consulting"
               sx={{
                 borderColor: 'primary.main',
@@ -168,9 +182,12 @@ const Home: React.FC = () => {
                 <Typography variant="h5" component="h3" gutterBottom>
                   {feature.title}
                 </Typography>
-                <Typography variant="body1" color="text.secondary">
+                <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
                   {feature.description}
                 </Typography>
+                <StyledLink to={feature.link}>
+                  Learn more →
+                </StyledLink>
               </CardContent>
             </Card>
           ))}
@@ -216,7 +233,7 @@ const Home: React.FC = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small" variant="contained" component={Link} to="/courses">
+                  <Button size="small" variant="contained" component={RouterLink} to="/courses">
                     Learn More
                   </Button>
                 </CardActions>
@@ -285,7 +302,7 @@ const Home: React.FC = () => {
           <Button
             variant="contained"
             size="large"
-            component={Link}
+            component={RouterLink}
             to="/register"
             sx={{
               backgroundColor: 'white',
