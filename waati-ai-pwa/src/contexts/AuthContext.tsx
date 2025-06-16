@@ -34,25 +34,15 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }, []);
 
   const login = async (email: string, password: string): Promise<boolean> => {
-    try {
-      // TODO: Replace with actual API authentication
-      // This is a placeholder - implement proper authentication
-      return false;
-    } catch (error) {
-      console.error('Login error:', error);
-      return false;
-    }
+    // TODO: Replace with actual API authentication
+    // This is a placeholder - implement proper authentication
+    return false;
   };
 
   const register = async (email: string, password: string, name: string): Promise<boolean> => {
-    try {
-      // TODO: Replace with actual API registration
-      // This is a placeholder - implement proper registration
-      return false;
-    } catch (error) {
-      console.error('Registration error:', error);
-      return false;
-    }
+    // TODO: Replace with actual API registration
+    // This is a placeholder - implement proper registration
+    return false;
   };
 
   const logout = () => {
