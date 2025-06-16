@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Typography, Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@mui/material';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { formatINR, formatCAD, inrToCad } from '../utils/currency';
 
 const Courses: React.FC = () => {

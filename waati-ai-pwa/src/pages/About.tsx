@@ -13,7 +13,6 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
-import LanguageIcon from '@mui/icons-material/Language';
 
 const About: React.FC = () => {
   const sanjitaSkills = [
@@ -40,98 +39,6 @@ const About: React.FC = () => {
     'Agile Frameworks',
     'Cross-functional Leadership',
     'Customer Experience Enhancement'
-  ];
-
-  const sanjitaExperience = [
-    {
-      title: 'AI Product Lead',
-      period: 'Aug 2022 - Present',
-      location: 'Toronto, Canada',
-      highlights: [
-        'Leading five high-impact AI products: JLL GPT, Outlook Assistant, JLL Falcon, Custom AI Assistants, and Teams Agent',
-        'Pioneered sophisticated AI agents including Computer Interaction and Browser Automation Agents',
-        'Spearheaded advanced RAG frameworks and Agentic RAG systems with Text-to-SQL capabilities',
-        'Streamlined business processes using low-code platforms (n8n, Relevance AI)',
-        'Successfully managing cross-functional teams and driving AI innovation across diverse product portfolios'
-      ]
-    },
-    {
-      title: 'Product Manager',
-      period: 'May 2020 – July 2022',
-      location: 'Toronto, Canada',
-      highlights: [
-        'Led development of Credit360, a security-focused B2B SaaS product for real-time risk assessment',
-        'Implemented user feedback loops resulting in 25% improvement in user satisfaction',
-        'Conducted risk analysis and security assessments ensuring compliance with banking security standards'
-      ]
-    },
-    {
-      title: 'Team Lead, Amazon Australia Launch',
-      period: 'April 2016 – Mar 2018',
-      location: 'Bengaluru, India',
-      highlights: [
-        'Led a team of 30 for the strategic launch of Amazon Australia',
-        'Developed strategic plans for profit objectives during the $500B souq.com acquisition',
-        'Built comprehensive product categorization and launch roadmaps'
-      ]
-    }
-  ];
-
-  const souravExperience = [
-    {
-      title: 'Senior Product Manager',
-      period: '8+ Years Experience',
-      location: 'Greater Toronto Area, Canada',
-      highlights: [
-        'Leading development and implementation of innovative data products and solutions',
-        'Driving initiatives and building data products spanning entire product lifecycle',
-        'Leading multiple initiatives around GenAI and developing applications using Cursor AI and OpenAI API',
-        'Collaborating effectively within agile frameworks with cross-functional stakeholders',
-        'Bridging the realms of business and technology to create impactful solutions',
-        'Specializing in Artificial Intelligence, Real Estate, and Finance sectors'
-      ]
-    }
-  ];
-
-  const sanjitaEducation = [
-    {
-      degree: 'MBA in Strategy and Finance',
-      school: 'DeGroote School of Business, McMaster University',
-      period: '2018 - 2020',
-      location: 'Burlington, Ontario'
-    },
-    {
-      degree: 'Electronics and Communication Engineering',
-      school: 'North Eastern Regional Institute of Science and Technology',
-      period: '2011 - 2015',
-      location: 'Arunachal Pradesh'
-    }
-  ];
-
-  const souravEducation = [
-    {
-      degree: 'MBA',
-      school: 'Business School',
-      period: 'Graduate Degree',
-      location: 'Canada'
-    },
-    {
-      degree: 'Engineering',
-      school: 'Engineering Institute',
-      period: 'Undergraduate Degree',
-      location: 'India'
-    }
-  ];
-
-  const souravLanguages = [
-    'Assamese (Native)',
-    'Hindi (Native)', 
-    'English (Professional)',
-    'Bengali (Native)'
-  ];
-
-  const souravCertifications = [
-    'Computer Aided Three-Dimensional Interactive Application (CATIA)'
   ];
 
   return (
