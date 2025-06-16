@@ -34,39 +34,25 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }, []);
 
   const login = async (email: string, password: string): Promise<boolean> => {
-    setIsLoading(true);
-    
-    // Demo authentication - replace with real API call
-    if (email === 'demo@waatiai.com' && password === 'demo123') {
-      const demoUser = {
-        id: '1',
-        email: 'demo@waatiai.com',
-        name: 'Demo User'
-      };
-      setUser(demoUser);
-      localStorage.setItem('waati_user', JSON.stringify(demoUser));
-      setIsLoading(false);
-      return true;
+    try {
+      // TODO: Replace with actual API authentication
+      // This is a placeholder - implement proper authentication
+      return false;
+    } catch (error) {
+      console.error('Login error:', error);
+      return false;
     }
-    
-    setIsLoading(false);
-    return false;
   };
 
   const register = async (email: string, password: string, name: string): Promise<boolean> => {
-    setIsLoading(true);
-    
-    // Demo registration - replace with real API call
-    const newUser = {
-      id: Date.now().toString(),
-      email,
-      name
-    };
-    
-    setUser(newUser);
-    localStorage.setItem('waati_user', JSON.stringify(newUser));
-    setIsLoading(false);
-    return true;
+    try {
+      // TODO: Replace with actual API registration
+      // This is a placeholder - implement proper registration
+      return false;
+    } catch (error) {
+      console.error('Registration error:', error);
+      return false;
+    }
   };
 
   const logout = () => {
