@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Typography, Box, TextField, Button, Alert } from '@mui/material';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mwkgyyqv'; // Replace with your Formspree endpoint after setup
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mpwrrvzl'; // Updated Formspree endpoint
 
 const Contact: React.FC = () => {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
