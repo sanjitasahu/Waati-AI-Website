@@ -78,6 +78,7 @@ const About: React.FC = () => {
             </Box>
             <Box sx={{ textAlign: 'center' }}>
               <Avatar
+                src="/sourav-profile.jpg"
                 alt="Sourav Dasgupta"
                 sx={{
                   width: 120,
@@ -85,14 +86,9 @@ const About: React.FC = () => {
                   mx: 'auto',
                   mb: 2,
                   border: '4px solid white',
-                  boxShadow: '0 8px 32px rgba(0,0,0,0.2)',
-                  bgcolor: 'primary.main',
-                  fontSize: '2rem',
-                  fontWeight: 'bold'
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.2)'
                 }}
-              >
-                SD
-              </Avatar>
+              />
               <Typography variant="h6" sx={{ fontWeight: 'bold' }}>Sourav Dasgupta</Typography>
               <Typography variant="body2" sx={{ opacity: 0.8 }}>Co-Founder & Senior Product Manager</Typography>
             </Box>
@@ -182,6 +178,7 @@ const About: React.FC = () => {
               <CardContent>
                 <Box sx={{ textAlign: 'center', mb: 4 }}>
                   <Avatar
+                    src="/sourav-profile.jpg"
                     alt="Sourav Dasgupta"
                     sx={{
                       width: 100,
@@ -189,14 +186,9 @@ const About: React.FC = () => {
                       mx: 'auto',
                       mb: 2,
                       border: '3px solid',
-                      borderColor: 'primary.main',
-                      bgcolor: 'primary.main',
-                      fontSize: '1.5rem',
-                      fontWeight: 'bold'
+                      borderColor: 'primary.main'
                     }}
-                  >
-                    SD
-                  </Avatar>
+                  />
                   <Typography variant="h4" gutterBottom sx={{ fontWeight: 'bold' }}>
                     Sourav Dasgupta
                   </Typography>
@@ -211,7 +203,7 @@ const About: React.FC = () => {
                       variant="outlined"
                       size="small"
                       startIcon={<LinkedInIcon />}
-                      href="https://www.linkedin.com/in/souravdasgupta"
+                      href="https://www.linkedin.com/in/sourav-dasgupta/"
                       target="_blank"
                     >
                       LinkedIn
