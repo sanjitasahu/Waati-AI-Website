@@ -61,33 +61,36 @@ const AnimatedButton = styled(Button)(({ theme }) => ({
 
 const Home: React.FC = () => {
   const stats = [
-    { number: '500+', label: 'Students Trained' },
-    { number: '50+', label: 'Companies Consulted' },
-    { number: '95%', label: 'Success Rate' },
-    { number: '24/7', label: 'Support' },
+    { number: '2 Hours', label: 'Weekly AI Learning' },
+    { number: '6-12', label: 'Grade Levels' },
+    { number: '30%', label: 'Faster Learning' },
+    { number: '80%', label: 'AI Jobs by 2030' },
   ];
 
-  const features = [
+  const programs = [
     {
       icon: <SchoolIcon sx={{ fontSize: 40 }} />,
-      title: 'Expert-Led Courses',
-      description: 'Learn from industry experts with hands-on AI and machine learning courses designed for real-world applications.',
-      link: '/courses',
-      highlights: ['Hands-on Projects', 'Industry Mentors', 'Career Support']
+      title: 'Interactive Workshops',
+      subtitle: 'Grades 6–8',
+      description: 'Spark curiosity with AI fundamentals, logic puzzles, and beginner coding in Scratch or Python.',
+      link: '/programs',
+      highlights: ['AI Fundamentals', 'Logic Puzzles', 'Scratch/Python Coding']
     },
     {
       icon: <BusinessIcon sx={{ fontSize: 40 }} />,
-      title: 'Business Consulting',
-      description: 'Transform your business with our AI consulting and implementation services tailored to your industry.',
-      link: '/consulting',
-      highlights: ['Custom Solutions', 'ROI-Focused', 'Proven Results']
+      title: 'Skill-Building Bootcamps',
+      subtitle: 'Grades 9–10',
+      description: 'Dive into machine learning basics, data ethics, and real-world case studies. Build chatbots and image classifiers.',
+      link: '/programs',
+      highlights: ['Machine Learning', 'Data Ethics', 'Build Chatbots']
     },
     {
       icon: <TrendingUpIcon sx={{ fontSize: 40 }} />,
-      title: 'Growth-Focused',
-      description: 'Strategies designed to accelerate your business growth through strategic AI adoption and optimization.',
-      link: '/growth',
-      highlights: ['Scalable Solutions', 'Performance Tracking', 'Ongoing Support']
+      title: 'Advanced Labs & Capstones',
+      subtitle: 'Grades 11–12',
+      description: 'Deepen technical know-how with neural networks, NLP, and hands-on capstone projects showcasing innovation.',
+      link: '/programs',
+      highlights: ['Neural Networks', 'NLP Projects', 'Capstone Showcases']
     },
   ];
 
@@ -138,115 +141,145 @@ const Home: React.FC = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          background: '#fff',
-          color: '#2d3748',
-          py: { xs: 6, md: 8 },
+          background: 'linear-gradient(135deg, #008080 0%, #FFD166 50%, #FF6B6B 100%)',
+          color: '#073B4C',
+          py: { xs: 8, md: 12 },
           position: 'relative',
           overflow: 'hidden',
+          minHeight: '85vh',
+          display: 'flex',
+          alignItems: 'center',
         }}
       >
         {/* Background Decorative Elements */}
         <Box
           sx={{
             position: 'absolute',
-            top: '-50px',
-            right: '-50px',
-            width: '200px',
-            height: '200px',
+            top: '-100px',
+            right: '-100px',
+            width: '300px',
+            height: '300px',
             borderRadius: '50%',
-            background: 'linear-gradient(135deg, #ff6b9d 0%, #c44569 100%)',
-            opacity: 0.1,
+            background: 'rgba(255, 255, 255, 0.1)',
             zIndex: 1,
           }}
         />
         <Box
           sx={{
             position: 'absolute',
-            bottom: '-100px',
-            left: '-100px',
-            width: '300px',
-            height: '300px',
+            bottom: '-150px',
+            left: '-150px',
+            width: '400px',
+            height: '400px',
             borderRadius: '50%',
-            background: 'linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%)',
-            opacity: 0.1,
+            background: 'rgba(7, 59, 76, 0.1)',
             zIndex: 1,
           }}
         />
         
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 6 }}>
-            <Box sx={{ flex: { xs: '1 1 100%', md: '1 1 45%' } }}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 8 }}>
+            <Box sx={{ flex: { xs: '1 1 100%', md: '1 1 55%' } }}>
               <Box sx={{ animation: `${fadeInUp} 1s ease-out` }}>
                 <Typography variant="h1" component="h1" gutterBottom sx={{ 
-                  fontWeight: 800,
-                  fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
+                  fontWeight: 900,
+                  fontSize: { xs: '2.8rem', sm: '4rem', md: '4.5rem' },
                   mb: 3,
-                  color: '#2d3748',
-                  lineHeight: 1.2
+                  color: '#073B4C',
+                  lineHeight: 1.1,
+                  textShadow: '0 2px 4px rgba(0,0,0,0.1)'
                 }}>
-                  Transform Your Business with{' '}
-                  <Box component="span" sx={{ color: '#667eea' }}>
+                  UNLOCK YOUR CHILD'S FUTURE WITH{' '}
+                  <Box component="span" sx={{ 
+                    background: 'linear-gradient(45deg, #008080, #073B4C)',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    fontWeight: 900
+                  }}>
                     AI
                   </Box>
+                  —IN JUST 2 HOURS A WEEK!
                 </Typography>
                 <Typography variant="h5" sx={{ 
                   mb: 4, 
-                  color: '#718096',
-                  fontSize: { xs: '1.1rem', sm: '1.3rem' },
+                  color: '#073B4C',
+                  fontSize: { xs: '1.2rem', sm: '1.4rem' },
                   lineHeight: 1.6,
-                  fontWeight: 400
+                  fontWeight: 500,
+                  opacity: 0.9
                 }}>
-                  Expert-led courses and consulting services to accelerate your AI journey and drive measurable business growth
+                  Hands-on, fun, and future-focused AI workshops for Grades 6–12 that spark curiosity, build confidence, and turn every student into a young innovator.
                 </Typography>
-                <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap', mb: 6 }}>
+                
+                {/* Student & Parent Benefits */}
+                <Box sx={{ mb: 5 }}>
+                  <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
+                    <Typography sx={{ fontSize: '1.5rem', mr: 1 }}>👩‍💻</Typography>
+                    <Typography variant="body1" sx={{ color: '#073B4C', fontWeight: 500 }}>
+                      <strong>For Students:</strong> Build your first chatbot, train an image-recognition model, and solve real-world puzzles—no prior coding required.
+                    </Typography>
+                  </Box>
+                  <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                    <Typography sx={{ fontSize: '1.5rem', mr: 1 }}>🎓</Typography>
+                    <Typography variant="body1" sx={{ color: '#073B4C', fontWeight: 500 }}>
+                      <strong>For Parents:</strong> Give your child the edge with essential 21st-century skills, guided by expert instructors and ethical learning.
+                    </Typography>
+                  </Box>
+                </Box>
+
+                <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap' }}>
                   <AnimatedButton
                     variant="contained"
                     size="large"
-                    href="/courses"
+                    href="/programs"
                     endIcon={<ArrowForwardIcon />}
                     sx={{
-                      backgroundColor: '#667eea',
+                      backgroundColor: '#073B4C',
                       color: 'white',
                       px: 4,
-                      py: 2,
+                      py: 2.5,
                       borderRadius: '50px',
                       textTransform: 'none',
                       fontSize: '1.1rem',
-                      fontWeight: 600,
+                      fontWeight: 700,
+                      boxShadow: '0 4px 20px rgba(7, 59, 76, 0.3)',
                       '&:hover': { 
-                        backgroundColor: '#5a67d8',
-                        transform: 'translateY(-2px)'
+                        backgroundColor: '#051f2e',
+                        transform: 'translateY(-3px)',
+                        boxShadow: '0 6px 25px rgba(7, 59, 76, 0.4)',
                       },
                     }}
                   >
-                    Explore Courses
+                    Explore Programs
                   </AnimatedButton>
                   <AnimatedButton
                     variant="outlined"
                     size="large"
-                    href="/consulting"
+                    href="/contact"
                     sx={{
-                      borderColor: '#667eea',
-                      color: '#667eea',
+                      borderColor: '#073B4C',
+                      borderWidth: '2px',
+                      color: '#073B4C',
                       px: 4,
-                      py: 2,
+                      py: 2.5,
                       borderRadius: '50px',
                       textTransform: 'none',
                       fontSize: '1.1rem',
-                      fontWeight: 600,
+                      fontWeight: 700,
                       '&:hover': { 
-                        borderColor: '#5a67d8',
-                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
-                        transform: 'translateY(-2px)'
+                        borderColor: '#051f2e',
+                        backgroundColor: 'rgba(7, 59, 76, 0.1)',
+                        transform: 'translateY(-3px)'
                       },
                     }}
                   >
-                    Get Consulting
+                    Enroll Today
                   </AnimatedButton>
                 </Box>
               </Box>
             </Box>
-            <Box sx={{ flex: { xs: '1 1 100%', md: '1 1 45%' } }}>
+            <Box sx={{ flex: { xs: '1 1 100%', md: '1 1 40%' } }}>
               <Box sx={{ 
                 textAlign: 'center',
                 position: 'relative',
@@ -257,9 +290,9 @@ const Home: React.FC = () => {
                   alt="Waati AI"
                   style={{
                     width: '100%',
-                    maxWidth: '400px',
+                    maxWidth: '450px',
                     height: 'auto',
-                    filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.1))'
+                    filter: 'drop-shadow(0 15px 35px rgba(0,0,0,0.2))'
                   }}
                 />
               </Box>
@@ -269,34 +302,39 @@ const Home: React.FC = () => {
       </Box>
 
       {/* Stats Section */}
-      <Box sx={{ py: 8, backgroundColor: '#f7fafc' }}>
+      <Box sx={{ py: 10, backgroundColor: '#F8F9FA' }}>
         <Container maxWidth="lg">
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'center' }}>
             {stats.map((stat, index) => (
               <Box key={index} sx={{ flex: { xs: '1 1 45%', md: '1 1 20%' }, minWidth: '200px' }}>
                 <Box sx={{ 
                   textAlign: 'center',
-                  p: 3,
-                  borderRadius: '20px',
+                  p: 4,
+                  borderRadius: '24px',
                   backgroundColor: 'white',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+                  boxShadow: '0 8px 32px rgba(0, 128, 128, 0.15)',
                   transition: 'all 0.3s ease',
+                  border: '2px solid transparent',
                   '&:hover': {
-                    transform: 'translateY(-5px)',
-                    boxShadow: '0 8px 30px rgba(0,0,0,0.15)',
+                    transform: 'translateY(-8px)',
+                    boxShadow: '0 12px 40px rgba(0, 128, 128, 0.25)',
+                    borderColor: '#008080',
                   }
                 }}>
                   <Typography variant="h2" component="div" sx={{ 
-                    fontWeight: 800, 
-                    color: '#667eea',
+                    fontWeight: 900, 
+                    background: 'linear-gradient(45deg, #008080, #FF6B6B)',
+                    backgroundClip: 'text',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
                     mb: 1,
-                    fontSize: { xs: '2rem', md: '2.5rem' }
+                    fontSize: { xs: '2.2rem', md: '2.8rem' }
                   }}>
                     {stat.number}
                   </Typography>
                   <Typography variant="body1" sx={{ 
-                    color: '#718096',
-                    fontWeight: 500,
+                    color: '#073B4C',
+                    fontWeight: 600,
                     fontSize: '1.1rem'
                   }}>
                     {stat.label}
@@ -308,90 +346,138 @@ const Home: React.FC = () => {
         </Container>
       </Box>
 
-      {/* Features Section */}
+      {/* Welcome Section */}
+      <Container maxWidth="lg" sx={{ py: 12 }}>
+        <Box sx={{ textAlign: 'center', mb: 8 }}>
+          <Typography variant="h2" component="h2" gutterBottom sx={{ 
+            fontWeight: 800,
+            color: '#073B4C',
+            fontSize: { xs: '2.5rem', md: '3.5rem' },
+            mb: 3
+          }}>
+            Welcome to the Future of Learning
+          </Typography>
+          <Typography variant="h6" sx={{ 
+            color: '#073B4C', 
+            maxWidth: '800px', 
+            mx: 'auto',
+            fontSize: '1.3rem',
+            lineHeight: 1.7,
+            fontWeight: 400,
+            opacity: 0.8
+          }}>
+            At Waati AI Consulting, we believe that AI literacy is as essential today as reading, writing, and arithmetic. 
+            Drawing inspiration from "Waati," a nod to Saraswati—the goddess of knowledge—we partner with schools and 
+            institutes to deliver hands-on AI training for Grades 6–12.
+          </Typography>
+        </Box>
+      </Container>
+
+      {/* Programs Section */}
       <Container maxWidth="lg" sx={{ py: 12 }}>
         <Box sx={{ textAlign: 'center', mb: 10 }}>
           <Typography variant="h2" component="h2" gutterBottom sx={{ 
             fontWeight: 800,
-            color: '#2d3748',
+            color: '#073B4C',
             fontSize: { xs: '2.5rem', md: '3.5rem' },
             mb: 3
           }}>
-            Why Choose Waati AI?
+            Our AI Education Programs
           </Typography>
           <Typography variant="h6" sx={{ 
-            color: '#718096', 
+            color: '#073B4C', 
             maxWidth: '700px', 
             mx: 'auto',
             fontSize: '1.3rem',
             lineHeight: 1.6,
-            fontWeight: 400
+            fontWeight: 400,
+            opacity: 0.8
           }}>
-            We provide comprehensive AI solutions tailored to your needs with proven results and industry expertise
+            Dynamic, project-based AI learning designed for every grade level
           </Typography>
         </Box>
         
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 6, justifyContent: 'center' }}>
-          {features.map((feature, index) => (
+          {programs.map((program, index) => (
             <Box key={index} sx={{ flex: { xs: '1 1 100%', sm: '1 1 45%', md: '1 1 30%' }, maxWidth: '400px' }}>
               <Box sx={{
                 p: 4,
                 borderRadius: '24px',
                 backgroundColor: 'white',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
+                boxShadow: '0 8px 32px rgba(0, 128, 128, 0.12)',
                 transition: 'all 0.3s ease',
                 height: '100%',
-                border: '1px solid rgba(102, 126, 234, 0.1)',
+                border: '2px solid transparent',
+                position: 'relative',
+                overflow: 'hidden',
+                '&::before': {
+                  content: '""',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: '4px',
+                  background: `linear-gradient(90deg, #008080 ${index * 33}%, #FFD166 ${index * 33 + 33}%, #FF6B6B ${index * 33 + 66}%)`,
+                },
                 '&:hover': {
-                  transform: 'translateY(-8px)',
-                  boxShadow: '0 12px 40px rgba(0,0,0,0.15)',
-                  borderColor: '#667eea'
+                  transform: 'translateY(-12px)',
+                  boxShadow: '0 16px 48px rgba(0, 128, 128, 0.2)',
+                  borderColor: '#008080',
                 }
               }}>
                 <Box sx={{ 
                   width: 80,
                   height: 80,
                   borderRadius: '20px',
-                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                  background: 'linear-gradient(135deg, #008080 0%, #FF6B6B 100%)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   mb: 3,
                   color: 'white'
                 }}>
-                  {feature.icon}
+                  {program.icon}
                 </Box>
                 <Typography variant="h4" component="h3" gutterBottom sx={{ 
                   fontWeight: 700,
-                  color: '#2d3748',
-                  mb: 2
+                  color: '#073B4C',
+                  mb: 1
                 }}>
-                  {feature.title}
+                  {program.title}
                 </Typography>
-                <Typography variant="body1" sx={{ 
-                  color: '#718096', 
-                  mb: 3, 
-                  lineHeight: 1.7,
+                <Typography variant="subtitle1" sx={{ 
+                  color: '#008080',
+                  fontWeight: 600,
+                  mb: 2,
                   fontSize: '1.1rem'
                 }}>
-                  {feature.description}
+                  {program.subtitle}
+                </Typography>
+                <Typography variant="body1" sx={{ 
+                  color: '#073B4C', 
+                  mb: 3, 
+                  lineHeight: 1.7,
+                  fontSize: '1rem',
+                  opacity: 0.8
+                }}>
+                  {program.description}
                 </Typography>
                 <Box sx={{ mb: 4 }}>
-                  {feature.highlights.map((highlight, idx) => (
+                  {program.highlights.map((highlight, idx) => (
                     <Box key={idx} sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
-                      <CheckCircleIcon sx={{ color: '#4ecdc4', fontSize: 20, mr: 2 }} />
-                      <Typography variant="body2" sx={{ color: '#4a5568', fontWeight: 500 }}>
+                      <CheckCircleIcon sx={{ color: '#008080', fontSize: 20, mr: 2 }} />
+                      <Typography variant="body2" sx={{ color: '#073B4C', fontWeight: 500 }}>
                         {highlight}
                       </Typography>
                     </Box>
                   ))}
                 </Box>
-                <StyledLink to={feature.link} sx={{ 
-                  color: '#667eea', 
+                <StyledLink to={program.link} sx={{ 
+                  color: '#008080', 
                   fontWeight: 600,
                   fontSize: '1.1rem',
                   '&:hover': {
-                    color: '#5a67d8'
+                    color: '#006666'
                   }
                 }}>
                   Learn more <ArrowForwardIcon sx={{ fontSize: 18, ml: 0.5 }} />

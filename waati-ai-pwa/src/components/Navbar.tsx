@@ -29,11 +29,12 @@ const Navbar: React.FC = () => {
 
   const menuItems = [
     { text: 'Home', path: '/' },
-    { text: 'Courses', path: '/courses' },
-    { text: 'Consulting', path: '/consulting' },
-    { text: 'Growth', path: '/growth' },
-    { text: 'NE India', path: '/north-east-india' },
     { text: 'About', path: '/about' },
+    { text: 'Programs', path: '/programs' },
+    { text: 'Teacher Resources', path: '/teacher-resources' },
+    { text: 'Case Studies', path: '/case-studies' },
+    { text: 'NE India', path: '/north-east-india' },
+    { text: 'Blog', path: '/blog' },
     { text: 'Contact', path: '/contact' },
   ];
 
@@ -42,18 +43,18 @@ const Navbar: React.FC = () => {
       sx={{ 
         width: 280, 
         pt: 2,
-        background: 'linear-gradient(135deg, #cdffd8 0%, #94b9ff 100%)',
+        background: 'linear-gradient(135deg, #008080 0%, #073B4C 100%)',
         height: '100%',
-        color: '#1A202C'
+        color: '#F8F9FA'
       }}
     >
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', pr: 2, pb: 2 }}>
         <IconButton 
           onClick={handleDrawerToggle}
           sx={{ 
-            color: '#1A202C',
+            color: '#F8F9FA',
             '&:hover': {
-              backgroundColor: 'rgba(26, 32, 44, 0.1)'
+              backgroundColor: 'rgba(248, 249, 250, 0.1)'
             }
           }}
         >
@@ -69,7 +70,7 @@ const Navbar: React.FC = () => {
             onClick={() => setMobileOpen(false)}
             sx={{
               '&:hover': {
-                backgroundColor: 'rgba(26, 32, 44, 0.1)',
+                backgroundColor: 'rgba(248, 249, 250, 0.1)',
                 borderRadius: '8px',
                 mx: 1
               },
@@ -83,7 +84,7 @@ const Navbar: React.FC = () => {
               sx={{ 
                 '& .MuiListItemText-primary': {
                   fontWeight: 500,
-                  color: '#1A202C'
+                  color: '#F8F9FA'
                 }
               }}
             />
@@ -98,7 +99,7 @@ const Navbar: React.FC = () => {
       <AppBar 
         position="sticky" 
         sx={{ 
-          background: 'linear-gradient(90deg, #cdffd8 0%, #94b9ff 100%)',
+          background: 'linear-gradient(90deg, #008080 0%, #FFD166 50%, #FF6B6B 100%)',
           boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
           backdropFilter: 'blur(10px)',
         }}
@@ -133,9 +134,9 @@ const Navbar: React.FC = () => {
               edge="start"
               onClick={handleDrawerToggle}
               sx={{ 
-                color: '#1A202C',
+                color: '#073B4C',
                 '&:hover': {
-                  backgroundColor: 'rgba(26, 32, 44, 0.1)'
+                  backgroundColor: 'rgba(7, 59, 76, 0.1)'
                 }
               }}
             >
@@ -150,13 +151,13 @@ const Navbar: React.FC = () => {
                   to={item.path}
                   sx={{ 
                     textTransform: 'none',
-                    color: '#1A202C',
-                    fontWeight: 500,
+                    color: '#073B4C',
+                    fontWeight: 600,
                     px: 2,
                     py: 1,
                     borderRadius: '8px',
                     '&:hover': {
-                      backgroundColor: 'rgba(26, 32, 44, 0.1)',
+                      backgroundColor: 'rgba(7, 59, 76, 0.1)',
                       transform: 'translateY(-1px)',
                       transition: 'all 0.2s ease-in-out'
                     }
@@ -180,7 +181,7 @@ const Navbar: React.FC = () => {
         }}
         sx={{
           '& .MuiDrawer-paper': {
-            background: 'linear-gradient(135deg, #cdffd8 0%, #94b9ff 100%)',
+            background: 'linear-gradient(135deg, #008080 0%, #073B4C 100%)',
           }
         }}
       >
