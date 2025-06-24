@@ -4,12 +4,7 @@ import {
   Container,
   Typography,
   Button,
-  Card,
-  CardContent,
-  CardActions,
   Avatar,
-  Grid,
-  Chip,
 } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import { styled, keyframes } from '@mui/material/styles';
@@ -54,62 +49,6 @@ const StyledLink = styled(RouterLink)(({ theme }) => ({
   }
 }));
 
-const FeatureCard = styled(Card)(({ theme }) => ({
-  maxWidth: 300,
-  textAlign: 'center',
-  padding: theme.spacing(3),
-  height: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-  transition: 'all 0.3s ease',
-  border: '1px solid transparent',
-  position: 'relative',
-  overflow: 'hidden',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: 0,
-    left: '-100%',
-    width: '100%',
-    height: '100%',
-    background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
-    transition: 'left 0.5s',
-  },
-  '&:hover': {
-    transform: 'translateY(-8px)',
-    boxShadow: theme.shadows[8],
-    borderColor: theme.palette.primary.light,
-    '&::before': {
-      left: '100%',
-    }
-  }
-}));
-
-const CourseCard = styled(Card)(({ theme }) => ({
-  maxWidth: 300,
-  height: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-  transition: 'all 0.3s ease',
-  position: 'relative',
-  '&:hover': {
-    transform: 'translateY(-4px)',
-    boxShadow: theme.shadows[6],
-  }
-}));
-
-const TestimonialCard = styled(Card)(({ theme }) => ({
-  maxWidth: 350,
-  padding: theme.spacing(2),
-  height: '100%',
-  display: 'flex',
-  flexDirection: 'column',
-  transition: 'all 0.3s ease',
-  '&:hover': {
-    transform: 'scale(1.02)',
-    boxShadow: theme.shadows[4],
-  }
-}));
 
 const AnimatedButton = styled(Button)(({ theme }) => ({
   transition: 'all 0.3s ease',
@@ -119,15 +58,6 @@ const AnimatedButton = styled(Button)(({ theme }) => ({
   }
 }));
 
-const StatsBox = styled(Box)(({ theme }) => ({
-  textAlign: 'center',
-  padding: theme.spacing(2),
-  '& .MuiTypography-h4': {
-    fontWeight: 'bold',
-    color: theme.palette.primary.main,
-    marginBottom: theme.spacing(1),
-  }
-}));
 
 const Home: React.FC = () => {
   const stats = [
@@ -244,8 +174,8 @@ const Home: React.FC = () => {
         />
         
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
-          <Grid container spacing={6} alignItems="center">
-            <Grid item xs={12} md={6}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 6 }}>
+            <Box sx={{ flex: { xs: '1 1 100%', md: '1 1 45%' } }}>
               <Box sx={{ animation: `${fadeInUp} 1s ease-out` }}>
                 <Typography variant="h1" component="h1" gutterBottom sx={{ 
                   fontWeight: 800,
@@ -272,8 +202,7 @@ const Home: React.FC = () => {
                   <AnimatedButton
                     variant="contained"
                     size="large"
-                    component={RouterLink}
-                    to="/courses"
+                    href="/courses"
                     endIcon={<ArrowForwardIcon />}
                     sx={{
                       backgroundColor: '#667eea',
@@ -295,8 +224,7 @@ const Home: React.FC = () => {
                   <AnimatedButton
                     variant="outlined"
                     size="large"
-                    component={RouterLink}
-                    to="/consulting"
+                    href="/consulting"
                     sx={{
                       borderColor: '#667eea',
                       color: '#667eea',
@@ -317,8 +245,8 @@ const Home: React.FC = () => {
                   </AnimatedButton>
                 </Box>
               </Box>
-            </Grid>
-            <Grid item xs={12} md={6}>
+            </Box>
+            <Box sx={{ flex: { xs: '1 1 100%', md: '1 1 45%' } }}>
               <Box sx={{ 
                 textAlign: 'center',
                 position: 'relative',
@@ -335,17 +263,17 @@ const Home: React.FC = () => {
                   }}
                 />
               </Box>
-            </Grid>
-          </Grid>
+            </Box>
+          </Box>
         </Container>
       </Box>
 
       {/* Stats Section */}
       <Box sx={{ py: 8, backgroundColor: '#f7fafc' }}>
         <Container maxWidth="lg">
-          <Grid container spacing={4}>
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 4, justifyContent: 'center' }}>
             {stats.map((stat, index) => (
-              <Grid item xs={6} md={3} key={index}>
+              <Box key={index} sx={{ flex: { xs: '1 1 45%', md: '1 1 20%' }, minWidth: '200px' }}>
                 <Box sx={{ 
                   textAlign: 'center',
                   p: 3,
@@ -374,9 +302,9 @@ const Home: React.FC = () => {
                     {stat.label}
                   </Typography>
                 </Box>
-              </Grid>
+              </Box>
             ))}
-          </Grid>
+          </Box>
         </Container>
       </Box>
 
@@ -403,9 +331,9 @@ const Home: React.FC = () => {
           </Typography>
         </Box>
         
-        <Grid container spacing={6} justifyContent="center">
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 6, justifyContent: 'center' }}>
           {features.map((feature, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+            <Box key={index} sx={{ flex: { xs: '1 1 100%', sm: '1 1 45%', md: '1 1 30%' }, maxWidth: '400px' }}>
               <Box sx={{
                 p: 4,
                 borderRadius: '24px',
@@ -458,29 +386,20 @@ const Home: React.FC = () => {
                     </Box>
                   ))}
                 </Box>
-                <Box sx={{ 
-                  component: RouterLink,
-                  to: feature.link,
-                  textDecoration: 'none',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  color: '#667eea',
+                <StyledLink to={feature.link} sx={{ 
+                  color: '#667eea', 
                   fontWeight: 600,
                   fontSize: '1.1rem',
-                  transition: 'all 0.2s ease',
                   '&:hover': {
-                    color: '#5a67d8',
-                    transform: 'translateX(4px)'
+                    color: '#5a67d8'
                   }
                 }}>
-                  <StyledLink to={feature.link} sx={{ color: '#667eea', fontWeight: 600 }}>
-                    Learn more <ArrowForwardIcon sx={{ fontSize: 18, ml: 0.5 }} />
-                  </StyledLink>
-                </Box>
+                  Learn more <ArrowForwardIcon sx={{ fontSize: 18, ml: 0.5 }} />
+                </StyledLink>
               </Box>
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Container>
 
       {/* Courses Section */}
@@ -517,9 +436,9 @@ const Home: React.FC = () => {
             </Typography>
           </Box>
           
-          <Grid container spacing={6} justifyContent="center">
+          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 6, justifyContent: 'center' }}>
             {courses.map((course, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
+              <Box key={index} sx={{ flex: { xs: '1 1 100%', sm: '1 1 45%', md: '1 1 30%' }, maxWidth: '400px' }}>
                 <Box sx={{
                   borderRadius: '24px',
                   backgroundColor: 'white',
@@ -598,8 +517,7 @@ const Home: React.FC = () => {
                     </Box>
                     <AnimatedButton 
                       variant="contained" 
-                      component={RouterLink} 
-                      to="/courses"
+                      href="/courses"
                       fullWidth
                       size="large"
                       sx={{
@@ -619,9 +537,9 @@ const Home: React.FC = () => {
                     </AnimatedButton>
                   </Box>
                 </Box>
-              </Grid>
+              </Box>
             ))}
-          </Grid>
+          </Box>
         </Container>
       </Box>
 
@@ -648,9 +566,9 @@ const Home: React.FC = () => {
           </Typography>
         </Box>
         
-        <Grid container spacing={6} justifyContent="center">
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 6, justifyContent: 'center' }}>
           {testimonials.map((testimonial, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
+            <Box key={index} sx={{ flex: { xs: '1 1 100%', sm: '1 1 45%', md: '1 1 30%' }, maxWidth: '400px' }}>
               <Box sx={{
                 p: 4,
                 borderRadius: '24px',
@@ -714,9 +632,9 @@ const Home: React.FC = () => {
                   </Box>
                 </Box>
               </Box>
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       </Container>
 
       {/* CTA Section */}
@@ -763,8 +681,7 @@ const Home: React.FC = () => {
           <AnimatedButton
             variant="contained"
             size="large"
-            component={RouterLink}
-            to="/contact"
+            href="/contact"
             endIcon={<ArrowForwardIcon />}
             sx={{
               backgroundColor: 'white',
