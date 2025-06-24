@@ -143,12 +143,12 @@ const Home: React.FC = () => {
         sx={{
           background: 'linear-gradient(90deg, #FF6B6B 0%, #FFD166 50%, #008080 100%)',
           color: '#073B4C',
-          py: { xs: 8, md: 12 },
           position: 'relative',
           overflow: 'hidden',
-          minHeight: '85vh',
+          minHeight: 'calc(100vh - 70px)', // Subtract navbar height
           display: 'flex',
           alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
         {/* Background Decorative Elements */}
@@ -177,125 +177,165 @@ const Home: React.FC = () => {
           }}
         />
         
-        <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 8 }}>
-            <Box sx={{ flex: { xs: '1 1 100%', md: '1 1 55%' } }}>
-              <Box sx={{ animation: `${fadeInUp} 1s ease-out` }}>
-                <Typography variant="h1" component="h1" gutterBottom sx={{ 
-                  fontWeight: 900,
-                  fontSize: { xs: '2.8rem', sm: '4rem', md: '4.5rem' },
-                  mb: 3,
-                  color: '#073B4C',
-                  lineHeight: 1.1,
-                  textShadow: '0 2px 4px rgba(0,0,0,0.1)'
-                }}>
-                  UNLOCK YOUR CHILD'S FUTURE WITH{' '}
-                  <Box component="span" sx={{ 
-                    background: 'linear-gradient(45deg, #008080, #073B4C)',
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    fontWeight: 900
-                  }}>
-                    AI
-                  </Box>
-                  —IN JUST 2 HOURS A WEEK!
-                </Typography>
-                <Typography variant="h5" sx={{ 
-                  mb: 4, 
-                  color: '#073B4C',
-                  fontSize: { xs: '1.2rem', sm: '1.4rem' },
-                  lineHeight: 1.6,
+        <Container 
+          maxWidth="md" 
+          sx={{ 
+            position: 'relative', 
+            zIndex: 2,
+            pt: { xs: '10rem', md: '12rem' },
+            pb: { xs: '5rem', md: '8rem' },
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+            minHeight: { xs: '50rem', md: 'calc(100vh - 70px)' }
+          }}
+        >
+          <Box sx={{ animation: `${fadeInUp} 1s ease-out`, maxWidth: '900px' }}>
+            <Typography variant="h1" component="h1" gutterBottom sx={{ 
+              fontWeight: 900,
+              fontSize: { xs: '3rem', sm: '4rem', md: '5rem', lg: '5.5rem' },
+              mb: 4,
+              color: '#073B4C',
+              lineHeight: { xs: 1.1, md: 1.05 },
+              textShadow: '0 2px 4px rgba(0,0,0,0.1)',
+              textAlign: 'center'
+            }}>
+              UNLOCK YOUR CHILD'S FUTURE WITH{' '}
+              <Box component="span" sx={{ 
+                background: 'linear-gradient(45deg, #008080, #073B4C)',
+                backgroundClip: 'text',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                fontWeight: 900
+              }}>
+                AI
+              </Box>
+              <br />
+              IN JUST 2 HOURS A WEEK!
+            </Typography>
+            
+            <Typography variant="h4" sx={{ 
+              mb: 6, 
+              color: '#073B4C',
+              fontSize: { xs: '1.3rem', sm: '1.6rem', md: '1.8rem' },
+              lineHeight: 1.5,
+              fontWeight: 500,
+              opacity: 0.9,
+              maxWidth: '700px',
+              mx: 'auto'
+            }}>
+              Hands-on, fun, and future-focused AI workshops for Grades 6–12 that spark curiosity, build confidence, and turn every student into a young innovator.
+            </Typography>
+            
+            {/* Student & Parent Benefits */}
+            <Box sx={{ mb: 8, maxWidth: '800px', mx: 'auto' }}>
+              <Box sx={{ 
+                display: 'flex', 
+                alignItems: 'flex-start', 
+                justifyContent: 'center',
+                mb: 3,
+                flexWrap: { xs: 'wrap', md: 'nowrap' },
+                gap: 2
+              }}>
+                <Typography sx={{ fontSize: '2rem', mr: 1 }}>👩‍💻</Typography>
+                <Typography variant="h6" sx={{ 
+                  color: '#073B4C', 
                   fontWeight: 500,
-                  opacity: 0.9
+                  fontSize: { xs: '1.1rem', md: '1.3rem' },
+                  textAlign: { xs: 'center', md: 'left' }
                 }}>
-                  Hands-on, fun, and future-focused AI workshops for Grades 6–12 that spark curiosity, build confidence, and turn every student into a young innovator.
+                  <strong>For Students:</strong> Build your first chatbot, train an image-recognition model, and solve real-world puzzles—no prior coding required.
                 </Typography>
-                
-                {/* Student & Parent Benefits */}
-                <Box sx={{ mb: 5 }}>
-                  <Box sx={{ display: 'flex', alignItems: 'flex-start', mb: 2 }}>
-                    <Typography sx={{ fontSize: '1.5rem', mr: 1 }}>👩‍💻</Typography>
-                    <Typography variant="body1" sx={{ color: '#073B4C', fontWeight: 500 }}>
-                      <strong>For Students:</strong> Build your first chatbot, train an image-recognition model, and solve real-world puzzles—no prior coding required.
-                    </Typography>
-                  </Box>
-                  <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
-                    <Typography sx={{ fontSize: '1.5rem', mr: 1 }}>🎓</Typography>
-                    <Typography variant="body1" sx={{ color: '#073B4C', fontWeight: 500 }}>
-                      <strong>For Parents:</strong> Give your child the edge with essential 21st-century skills, guided by expert instructors and ethical learning.
-                    </Typography>
-                  </Box>
-                </Box>
-
-                <Box sx={{ display: 'flex', gap: 3, flexWrap: 'wrap' }}>
-                  <AnimatedButton
-                    variant="contained"
-                    size="large"
-                    href="/programs"
-                    endIcon={<ArrowForwardIcon />}
-                    sx={{
-                      backgroundColor: '#073B4C',
-                      color: 'white',
-                      px: 4,
-                      py: 2.5,
-                      borderRadius: '50px',
-                      textTransform: 'none',
-                      fontSize: '1.1rem',
-                      fontWeight: 700,
-                      boxShadow: '0 4px 20px rgba(7, 59, 76, 0.3)',
-                      '&:hover': { 
-                        backgroundColor: '#051f2e',
-                        transform: 'translateY(-3px)',
-                        boxShadow: '0 6px 25px rgba(7, 59, 76, 0.4)',
-                      },
-                    }}
-                  >
-                    Explore Programs
-                  </AnimatedButton>
-                  <AnimatedButton
-                    variant="outlined"
-                    size="large"
-                    href="/contact"
-                    sx={{
-                      borderColor: '#073B4C',
-                      borderWidth: '2px',
-                      color: '#073B4C',
-                      px: 4,
-                      py: 2.5,
-                      borderRadius: '50px',
-                      textTransform: 'none',
-                      fontSize: '1.1rem',
-                      fontWeight: 700,
-                      '&:hover': { 
-                        borderColor: '#051f2e',
-                        backgroundColor: 'rgba(7, 59, 76, 0.1)',
-                        transform: 'translateY(-3px)'
-                      },
-                    }}
-                  >
-                    Enroll Today
-                  </AnimatedButton>
-                </Box>
+              </Box>
+              <Box sx={{ 
+                display: 'flex', 
+                alignItems: 'flex-start', 
+                justifyContent: 'center',
+                flexWrap: { xs: 'wrap', md: 'nowrap' },
+                gap: 2
+              }}>
+                <Typography sx={{ fontSize: '2rem', mr: 1 }}>🎓</Typography>
+                <Typography variant="h6" sx={{ 
+                  color: '#073B4C', 
+                  fontWeight: 500,
+                  fontSize: { xs: '1.1rem', md: '1.3rem' },
+                  textAlign: { xs: 'center', md: 'left' }
+                }}>
+                  <strong>For Parents:</strong> Give your child the edge with essential 21st-century skills, guided by expert instructors and ethical learning.
+                </Typography>
               </Box>
             </Box>
-            <Box sx={{ flex: { xs: '1 1 100%', md: '1 1 40%' } }}>
-              <Box sx={{ 
-                textAlign: 'center',
-                position: 'relative',
-                animation: `${float} 6s ease-in-out infinite`
-              }}>
-                <img
-                  src="/WAATI AI consulting logo.png"
-                  alt="Waati AI"
-                  style={{
-                    width: '100%',
-                    maxWidth: '450px',
-                    height: 'auto',
-                    filter: 'drop-shadow(0 15px 35px rgba(0,0,0,0.2))'
-                  }}
-                />
-              </Box>
+
+            <Box sx={{ display: 'flex', gap: 4, justifyContent: 'center', flexWrap: 'wrap' }}>
+              <AnimatedButton
+                variant="contained"
+                size="large"
+                href="/programs"
+                endIcon={<ArrowForwardIcon />}
+                sx={{
+                  backgroundColor: '#073B4C',
+                  color: 'white',
+                  px: 6,
+                  py: 3,
+                  borderRadius: '50px',
+                  textTransform: 'none',
+                  fontSize: '1.2rem',
+                  fontWeight: 700,
+                  boxShadow: '0 8px 32px rgba(7, 59, 76, 0.3)',
+                  minWidth: '200px',
+                  '&:hover': { 
+                    backgroundColor: '#051f2e',
+                    transform: 'translateY(-4px)',
+                    boxShadow: '0 12px 40px rgba(7, 59, 76, 0.4)',
+                  },
+                }}
+              >
+                Explore Programs
+              </AnimatedButton>
+              <AnimatedButton
+                variant="outlined"
+                size="large"
+                href="/contact"
+                sx={{
+                  borderColor: '#073B4C',
+                  borderWidth: '3px',
+                  color: '#073B4C',
+                  px: 6,
+                  py: 3,
+                  borderRadius: '50px',
+                  textTransform: 'none',
+                  fontSize: '1.2rem',
+                  fontWeight: 700,
+                  minWidth: '200px',
+                  '&:hover': { 
+                    borderColor: '#051f2e',
+                    backgroundColor: 'rgba(7, 59, 76, 0.1)',
+                    transform: 'translateY(-4px)'
+                  },
+                }}
+              >
+                Enroll Today
+              </AnimatedButton>
+            </Box>
+
+            {/* Logo at bottom */}
+            <Box sx={{ 
+              mt: 8,
+              animation: `${float} 6s ease-in-out infinite`
+            }}>
+              <img
+                src="/WAATI AI consulting logo.png"
+                alt="Waati AI"
+                style={{
+                  width: '100%',
+                  maxWidth: '300px',
+                  height: 'auto',
+                  filter: 'drop-shadow(0 10px 25px rgba(0,0,0,0.15))',
+                  opacity: 0.9
+                }}
+              />
             </Box>
           </Box>
         </Container>
