@@ -26,6 +26,24 @@ const fadeInUp = keyframes`
   }
 `;
 
+const typewriter = keyframes`
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+`;
+
+const blink = keyframes`
+  0%, 50% {
+    border-color: transparent;
+  }
+  51%, 100% {
+    border-color: #073B4C;
+  }
+`;
+
 
 const StyledLink = styled(RouterLink)(({ theme }) => ({
   color: 'inherit',
@@ -451,16 +469,40 @@ const Home: React.FC = () => {
       {/* Welcome Section */}
       <Box sx={{ 
         py: { xs: '60px', md: '80px' }, 
-        backgroundColor: '#ffffff'
+        background: 'url("/future-of-learning.jpg") center center / cover no-repeat',
+        position: 'relative',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundColor: 'rgba(255, 255, 255, 0.6)',
+          zIndex: 1
+        }
       }}>
-        <Container maxWidth="lg">
-          <Box sx={{ textAlign: 'center', mb: 8 }}>
+        <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
+          <Box sx={{ 
+            textAlign: 'center', 
+            mb: 8,
+            animation: `${fadeInUp} 1s ease-out`
+          }}>
             <Typography variant="h2" component="h2" gutterBottom sx={{ 
               fontWeight: 800,
               color: '#073B4C',
               fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
               mb: 4,
-              lineHeight: 1.2
+              lineHeight: 1.2,
+              textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+              overflow: 'hidden',
+              borderRight: '3px solid #073B4C',
+              whiteSpace: 'nowrap',
+              animation: `${typewriter} 3s steps(32, end), ${blink} 0.75s step-end infinite`,
+              animationDelay: '0.5s',
+              animationFillMode: 'both',
+              width: 'fit-content',
+              mx: 'auto'
             }}>
               Welcome to the Future of Learning
             </Typography>
@@ -469,9 +511,11 @@ const Home: React.FC = () => {
               fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.5rem' },
               lineHeight: 1.6,
               fontWeight: 400,
-              opacity: 0.8,
+              opacity: 0,
               maxWidth: '800px',
-              mx: 'auto'
+              mx: 'auto',
+              textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
+              animation: `${fadeInUp} 1.5s ease-out 4s both`
             }}>
               At Waati AI Consulting, we believe that AI literacy is as essential today as reading, writing, and arithmetic. 
               Drawing inspiration from "Waati," a nod to Saraswati—the goddess of knowledge—we partner with schools and 
