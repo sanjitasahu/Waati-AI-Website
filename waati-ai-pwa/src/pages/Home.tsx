@@ -240,20 +240,21 @@ const Home: React.FC = () => {
             textAlign: 'center'
           }}>
               <Typography variant="h1" component="h1" sx={{ 
-                fontWeight: 900,
+                fontFamily: '"Poppins", "Inter", sans-serif',
+                fontWeight: 700,
                 fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem', lg: '4rem' },
                 mb: 3,
                 color: '#073B4C',
                 lineHeight: 1.1,
                 textShadow: '0 2px 4px rgba(0,0,0,0.1)'
               }}>
-                UNLOCK YOUR CHILD'S FUTURE WITH{' '}
+                Unlock Your Child's Future with{' '}
                 <Box component="span" sx={{ 
                   background: 'linear-gradient(45deg, #008080, #073B4C)',
                   backgroundClip: 'text',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
-                  fontWeight: 900
+                  fontWeight: 800
                 }}>
                   AI
                 </Box>
