@@ -2,24 +2,6 @@ import React from 'react';
 import { Container, Typography, Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 
 const Courses: React.FC = () => {
-  const monthlySchedule = [
-    {
-      session: 'Week 1',
-      focus: 'Foundations of AI: algorithms, history, ethics',
-      outcome: 'Confidence solving logic challenges'
-    },
-    {
-      session: 'Week 2',
-      focus: 'Hands-on ML: data collection, training basic models',
-      outcome: 'Build a simple image-recognition prototype'
-    },
-    {
-      session: 'Week 3',
-      focus: 'Advanced Applications: NLP, capstone ideation',
-      outcome: 'Pitch a real-world AI solution to peers & mentors'
-    }
-  ];
-
   return (
     <Container maxWidth="lg" sx={{ py: 8 }}>
       <Box textAlign="center" sx={{ mb: 8 }}>
@@ -48,15 +30,27 @@ const Courses: React.FC = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {monthlySchedule.map((week) => (
-                <TableRow key={week.session}>
-                  <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
-                    {week.session}
-                  </TableCell>
-                  <TableCell>{week.focus}</TableCell>
-                  <TableCell>{week.outcome}</TableCell>
-                </TableRow>
-              ))}
+              <TableRow>
+                <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
+                  Week 1
+                </TableCell>
+                <TableCell>Foundations of AI: algorithms, history, ethics</TableCell>
+                <TableCell>Confidence solving logic challenges</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
+                  Week 2
+                </TableCell>
+                <TableCell>Hands-on ML: data collection, training basic models</TableCell>
+                <TableCell>Build a simple image-recognition prototype</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
+                  Week 3
+                </TableCell>
+                <TableCell>Advanced Applications: NLP, capstone ideation</TableCell>
+                <TableCell>Pitch a real-world AI solution to peers & mentors</TableCell>
+              </TableRow>
             </TableBody>
           </Table>
         </TableContainer>
@@ -85,13 +79,13 @@ const Courses: React.FC = () => {
         </Typography>
         <Box sx={{ pl: 3 }}>
           <Typography variant="body1" sx={{ mb: 2 }}>
-            <Box component="span" sx={{ fontWeight: 'bold' }}>• Mentor:</Box> Provide emotional encouragement and ethical perspectives on AI projects.
+            <strong>• Mentor:</strong> Provide emotional encouragement and ethical perspectives on AI projects.
           </Typography>
           <Typography variant="body1" sx={{ mb: 2 }}>
-            <Box component="span" sx={{ fontWeight: 'bold' }}>• Coach:</Box> Support students through troubleshooting code, refining prototypes, and presenting ideas with confidence.
+            <strong>• Coach:</strong> Support students through troubleshooting code, refining prototypes, and presenting ideas with confidence.
           </Typography>
           <Typography variant="body1" sx={{ mb: 2 }}>
-            <Box component="span" sx={{ fontWeight: 'bold' }}>• Facilitator:</Box> Curate tools, datasets, and project ideas that resonate with students' interests and school objectives.
+            <strong>• Facilitator:</strong> Curate tools, datasets, and project ideas that resonate with students' interests and school objectives.
           </Typography>
         </Box>
       </Box>
@@ -103,16 +97,16 @@ const Courses: React.FC = () => {
         </Typography>
         <Box sx={{ pl: 3 }}>
           <Typography variant="body1" sx={{ mb: 2 }}>
-            <Box component="span" sx={{ fontWeight: 'bold' }}>• Personalized Learning Pathways:</Box> Every student progresses at their own pace through AI modules tailored to their grade level and interests.
+            <strong>• Personalized Learning Pathways:</strong> Every student progresses at their own pace through AI modules tailored to their grade level and interests.
           </Typography>
           <Typography variant="body1" sx={{ mb: 2 }}>
-            <Box component="span" sx={{ fontWeight: 'bold' }}>• Project-Based Mastery:</Box> Theory meets practice: from chatbots to data-driven social impact projects, learners see AI in action.
+            <strong>• Project-Based Mastery:</strong> Theory meets practice: from chatbots to data-driven social impact projects, learners see AI in action.
           </Typography>
           <Typography variant="body1" sx={{ mb: 2 }}>
-            <Box component="span" sx={{ fontWeight: 'bold' }}>• Ethics & Empathy Built In:</Box> We integrate discussions on bias, privacy, and societal impact so students become responsible innovators.
+            <strong>• Ethics & Empathy Built In:</strong> We integrate discussions on bias, privacy, and societal impact so students become responsible innovators.
           </Typography>
           <Typography variant="body1" sx={{ mb: 2 }}>
-            <Box component="span" sx={{ fontWeight: 'bold' }}>• Sustainable Implementation:</Box> Our Teacher Academy and resource portal ensure that AI education continues long after our trainers leave campus.
+            <strong>• Sustainable Implementation:</strong> Our Teacher Academy and resource portal ensure that AI education continues long after our trainers leave campus.
           </Typography>
         </Box>
       </Box>
@@ -120,4 +114,4 @@ const Courses: React.FC = () => {
   );
 };
 
-export default Courses; 
+export default Courses;
