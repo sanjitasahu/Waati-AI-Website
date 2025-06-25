@@ -26,14 +26,6 @@ const fadeInUp = keyframes`
   }
 `;
 
-const typewriter = keyframes`
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-`;
 
 const blink = keyframes`
   0%, 50% {
@@ -41,6 +33,83 @@ const blink = keyframes`
   }
   51%, 100% {
     border-color: #073B4C;
+  }
+`;
+
+const continuousTypewriter = keyframes`
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+  45% {
+    width: 100%;
+    opacity: 1;
+  }
+  55% {
+    width: 100%;
+    opacity: 1;
+  }
+  100% {
+    width: 0;
+    opacity: 1;
+  }
+`;
+
+const fadeInLoop = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  30% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+`;
+
+const cardSlideIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(80px) scale(0.8) rotateX(20deg);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(20px) scale(0.95) rotateX(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+  }
+`;
+
+const textReveal = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(10px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+`;
+
+const pulseGlow = keyframes`
+  0%, 100% {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    box-shadow: 0 12px 40px rgba(255, 107, 107, 0.3);
   }
 `;
 
@@ -498,9 +567,7 @@ const Home: React.FC = () => {
               overflow: 'hidden',
               borderRight: '3px solid #073B4C',
               whiteSpace: 'nowrap',
-              animation: `${typewriter} 3s steps(32, end), ${blink} 0.75s step-end infinite`,
-              animationDelay: '0.5s',
-              animationFillMode: 'both',
+              animation: `${continuousTypewriter} 6s steps(32, end) infinite, ${blink} 0.75s step-end infinite`,
               width: 'fit-content',
               mx: 'auto'
             }}>
@@ -511,11 +578,11 @@ const Home: React.FC = () => {
               fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.5rem' },
               lineHeight: 1.6,
               fontWeight: 400,
-              opacity: 0,
               maxWidth: '800px',
               mx: 'auto',
               textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
-              animation: `${fadeInUp} 1.5s ease-out 4s both`
+              animation: `${fadeInLoop} 8s ease-in-out infinite`,
+              animationDelay: '1s'
             }}>
               At Waati AI Consulting, we believe that AI literacy is as essential today as reading, writing, and arithmetic. 
               Drawing inspiration from "Waati," a nod to Saraswati—the goddess of knowledge—we partner with schools and 
@@ -554,34 +621,94 @@ const Home: React.FC = () => {
             </Typography>
             
             <Box sx={{ 
-              display: 'flex', 
-              flexDirection: 'column', 
-              gap: 3, 
-              maxWidth: '600px', 
-              mx: 'auto',
-              textAlign: 'left'
+              display: 'grid', 
+              gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' }, 
+              gap: 4, 
+              maxWidth: '1200px', 
+              mx: 'auto'
             }}>
               {[
-                'Unprepared for the ethical and technical complexities of AI',
-                'Demotivated by one-size-fits-all lessons that feel disconnected from real life',
-                'Unequipped to solve tomorrow\'s problems with tomorrow\'s tools'
+                {
+                  title: 'Ethical & Technical Gaps',
+                  description: 'Unprepared for the ethical and technical complexities of AI',
+                  image: '/Ethical.jpg',
+                  blogUrl: '/blog'
+                },
+                {
+                  title: 'Disconnected Learning',
+                  description: 'Demotivated by one-size-fits-all lessons that feel disconnected from real life',
+                  image: '/disconnected-learning.png',
+                  blogUrl: '/blog'
+                },
+                {
+                  title: 'Future Skills Gap',
+                  description: 'Unequipped to solve tomorrow\'s problems with tomorrow\'s tools',
+                  image: '/future-skill-gap.png',
+                  blogUrl: '/blog'
+                }
               ].map((challenge, index) => (
-                <Box key={index} sx={{ display: 'flex', alignItems: 'flex-start', gap: 2 }}>
+                <Box 
+                  key={index}
+                  component={RouterLink}
+                  to={challenge.blogUrl}
+                  sx={{ 
+                    background: `url("${challenge.image}") center center / cover no-repeat`,
+                    borderRadius: '20px',
+                    p: 4,
+                    textAlign: 'center',
+                    minHeight: '350px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'flex-end',
+                    position: 'relative',
+                    boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
+                    overflow: 'hidden',
+                    animation: `${cardSlideIn} 1.2s ease-out ${index * 0.5}s both, ${pulseGlow} 2s ease-in-out ${index * 0.5 + 1.5}s infinite`,
+                    transition: 'all 0.4s ease',
+                    textDecoration: 'none',
+                    cursor: 'pointer',
+                    '&::before': {
+                      content: '""',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      background: 'linear-gradient(to top, rgba(7, 59, 76, 0.8), rgba(7, 59, 76, 0.3))',
+                      zIndex: 1
+                    },
+                    '&:hover': {
+                      transform: 'translateY(-12px) scale(1.02)',
+                      boxShadow: '0 20px 60px rgba(0, 0, 0, 0.25)',
+                      '&::before': {
+                        background: 'linear-gradient(to top, rgba(7, 59, 76, 0.9), rgba(7, 59, 76, 0.4))'
+                      }
+                    }
+                  }}
+                >
                   <Box sx={{ 
-                    width: 8, 
-                    height: 8, 
-                    borderRadius: '50%', 
-                    backgroundColor: '#FF6B6B',
-                    mt: 1.5,
-                    flexShrink: 0
-                  }} />
-                  <Typography variant="body1" sx={{ 
-                    fontSize: '1.1rem', 
-                    lineHeight: 1.6,
-                    color: '#073B4C'
+                    position: 'relative', 
+                    zIndex: 2,
+                    animation: `${textReveal} 1s ease-out ${index * 0.5 + 0.8}s both`
                   }}>
-                    {challenge}
-                  </Typography>
+                    <Typography variant="h6" sx={{ 
+                      fontWeight: 700,
+                      color: 'white',
+                      mb: 2,
+                      fontSize: '1.4rem',
+                      textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
+                    }}>
+                      {challenge.title}
+                    </Typography>
+                    <Typography variant="body1" sx={{ 
+                      fontSize: '1rem', 
+                      lineHeight: 1.6,
+                      color: 'white',
+                      textShadow: '1px 1px 2px rgba(0,0,0,0.5)'
+                    }}>
+                      {challenge.description}
+                    </Typography>
+                  </Box>
                 </Box>
               ))}
             </Box>

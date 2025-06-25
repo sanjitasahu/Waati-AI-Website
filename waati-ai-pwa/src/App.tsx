@@ -11,6 +11,7 @@ import Courses from './pages/Courses';
 import Consulting from './pages/Consulting';
 import Growth from './pages/Growth';
 import About from './pages/About';
+import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -97,6 +98,7 @@ const App: React.FC = () => {
                   <Route path="/consulting" element={<Consulting />} />
                   <Route path="/growth" element={<Growth />} />
                   <Route path="/about" element={<About />} />
+                  <Route path="/blog" element={<Blog />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/register" element={<Register />} />
