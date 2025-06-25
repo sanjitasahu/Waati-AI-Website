@@ -84,19 +84,19 @@ const Courses: React.FC = () => {
         <List sx={{ pl: 2 }}>
           <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
             <ListItemText 
-              primary={<strong>Mentor:</strong>}
+              primary={<Box component="span" sx={{ fontWeight: 'bold' }}>Mentor:</Box>}
               secondary="Provide emotional encouragement and ethical perspectives on AI projects."
             />
           </ListItem>
           <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
             <ListItemText 
-              primary={<strong>Coach:</strong>}
+              primary={<Box component="span" sx={{ fontWeight: 'bold' }}>Coach:</Box>}
               secondary="Support students through troubleshooting code, refining prototypes, and presenting ideas with confidence."
             />
           </ListItem>
           <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
             <ListItemText 
-              primary={<strong>Facilitator:</strong>}
+              primary={<Box component="span" sx={{ fontWeight: 'bold' }}>Facilitator:</Box>}
               secondary="Curate tools, datasets, and project ideas that resonate with students' interests and school objectives."
             />
           </ListItem>
@@ -111,25 +111,25 @@ const Courses: React.FC = () => {
         <List sx={{ pl: 2 }}>
           <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
             <ListItemText 
-              primary={<strong>Personalized Learning Pathways:</strong>}
+              primary={<Box component="span" sx={{ fontWeight: 'bold' }}>Personalized Learning Pathways:</Box>}
               secondary="Every student progresses at their own pace through AI modules tailored to their grade level and interests."
             />
           </ListItem>
           <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
             <ListItemText 
-              primary={<strong>Project-Based Mastery:</strong>}
+              primary={<Box component="span" sx={{ fontWeight: 'bold' }}>Project-Based Mastery:</Box>}
               secondary="Theory meets practice: from chatbots to data-driven social impact projects, learners see AI in action."
             />
           </ListItem>
           <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
             <ListItemText 
-              primary={<strong>Ethics & Empathy Built In:</strong>}
+              primary={<Box component="span" sx={{ fontWeight: 'bold' }}>Ethics & Empathy Built In:</Box>}
               secondary="We integrate discussions on bias, privacy, and societal impact so students become responsible innovators."
             />
           </ListItem>
           <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
             <ListItemText 
-              primary={<strong>Sustainable Implementation:</strong>}
+              primary={<Box component="span" sx={{ fontWeight: 'bold' }}>Sustainable Implementation:</Box>}
               secondary="Our Teacher Academy and resource portal ensure that AI education continues long after our trainers leave campus."
             />
           </ListItem>
