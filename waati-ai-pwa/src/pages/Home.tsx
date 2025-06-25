@@ -241,7 +241,7 @@ const Home: React.FC = () => {
           }}>
               <Typography variant="h1" component="h1" sx={{ 
                 fontWeight: 900,
-                fontSize: { xs: '3rem', sm: '4rem', md: '4.5rem', lg: '5rem' },
+                fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem', lg: '4rem' },
                 mb: 3,
                 color: '#073B4C',
                 lineHeight: 1.1,
