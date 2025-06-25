@@ -9,6 +9,7 @@ import {
   ListItem,
   ListItemText,
   Box,
+  Typography,
   useTheme,
   useMediaQuery,
 } from '@mui/material';
@@ -31,10 +32,6 @@ const Navbar: React.FC = () => {
     { text: 'Home', path: '/' },
     { text: 'About', path: '/about' },
     { text: 'Programs', path: '/programs' },
-    { text: 'Teacher Resources', path: '/teacher-resources' },
-    { text: 'Case Studies', path: '/case-studies' },
-    { text: 'NE India', path: '/north-east-india' },
-    { text: 'Blog', path: '/blog' },
     { text: 'Contact', path: '/contact' },
   ];
 
@@ -43,18 +40,18 @@ const Navbar: React.FC = () => {
       sx={{ 
         width: 280, 
         pt: 2,
-        background: 'linear-gradient(135deg, #008080 0%, #073B4C 100%)',
+        background: '#008080',
         height: '100%',
-        color: '#F8F9FA'
+        color: 'white'
       }}
     >
       <Box sx={{ display: 'flex', justifyContent: 'flex-end', pr: 2, pb: 2 }}>
         <IconButton 
           onClick={handleDrawerToggle}
           sx={{ 
-            color: '#F8F9FA',
+            color: 'white',
             '&:hover': {
-              backgroundColor: 'rgba(248, 249, 250, 0.1)'
+              backgroundColor: 'rgba(255, 255, 255, 0.1)'
             }
           }}
         >
@@ -70,11 +67,11 @@ const Navbar: React.FC = () => {
             onClick={() => setMobileOpen(false)}
             sx={{
               '&:hover': {
-                backgroundColor: 'rgba(248, 249, 250, 0.1)',
-                borderRadius: '8px',
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                borderRadius: '4px',
                 mx: 1
               },
-              borderRadius: '8px',
+              borderRadius: '4px',
               mx: 1,
               mb: 0.5
             }}
@@ -84,7 +81,7 @@ const Navbar: React.FC = () => {
               sx={{ 
                 '& .MuiListItemText-primary': {
                   fontWeight: 500,
-                  color: '#F8F9FA'
+                  color: 'white'
                 }
               }}
             />
@@ -99,7 +96,7 @@ const Navbar: React.FC = () => {
       <AppBar 
         position="sticky" 
         sx={{ 
-          background: 'linear-gradient(90deg, #008080 0%, #FFD166 50%, #FF6B6B 100%)',
+          background: '#008080',
           boxShadow: '0 4px 20px rgba(0, 0, 0, 0.1)',
           backdropFilter: 'blur(10px)',
         }}
@@ -115,16 +112,18 @@ const Navbar: React.FC = () => {
               alignItems: 'center',
             }}
           >
-            <img
-              src="/waati-ai-consulting-logo.png"
-              alt="Waati AI"
-              style={{
-                height: '45px',
-                width: 'auto',
-                maxWidth: '220px',
-                filter: 'drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1))',
+            <Typography
+              variant="h4"
+              sx={{
+                fontFamily: '"Bradley Hand", "Brush Script MT", cursive',
+                fontWeight: 700,
+                color: 'white',
+                fontSize: { xs: '1.5rem', md: '2rem' },
+                letterSpacing: '0.5px'
               }}
-            />
+            >
+              WAATI AI
+            </Typography>
           </Box>
 
           {isMobile ? (
@@ -134,9 +133,9 @@ const Navbar: React.FC = () => {
               edge="start"
               onClick={handleDrawerToggle}
               sx={{ 
-                color: '#073B4C',
+                color: 'white',
                 '&:hover': {
-                  backgroundColor: 'rgba(7, 59, 76, 0.1)'
+                  backgroundColor: 'rgba(255, 255, 255, 0.1)'
                 }
               }}
             >
@@ -151,13 +150,13 @@ const Navbar: React.FC = () => {
                   to={item.path}
                   sx={{ 
                     textTransform: 'none',
-                    color: '#073B4C',
+                    color: 'white',
                     fontWeight: 600,
                     px: 2,
                     py: 1,
                     borderRadius: '8px',
                     '&:hover': {
-                      backgroundColor: 'rgba(7, 59, 76, 0.1)',
+                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
                       transform: 'translateY(-1px)',
                       transition: 'all 0.2s ease-in-out'
                     }
@@ -181,7 +180,7 @@ const Navbar: React.FC = () => {
         }}
         sx={{
           '& .MuiDrawer-paper': {
-            background: 'linear-gradient(135deg, #008080 0%, #073B4C 100%)',
+            background: '#008080'
           }
         }}
       >

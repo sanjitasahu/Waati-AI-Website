@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
     <Box
       component="footer"
       sx={{
-        backgroundColor: 'primary.main',
+        backgroundColor: '#008080',
         color: 'white',
         py: 6,
         mt: 'auto',
@@ -23,17 +23,21 @@ const Footer: React.FC = () => {
     >
       <Container maxWidth="lg">
         <Box sx={{ textAlign: 'center', mb: 4 }}>
-          <img
-            src="/WAATI AI consulting logo.png"
-            alt="Waati AI"
-            style={{
-              height: '50px',
-              width: 'auto',
-              marginBottom: '16px',
+          <Typography
+            variant="h4"
+            sx={{
+              fontFamily: '"Bradley Hand", "Brush Script MT", cursive',
+              fontWeight: 700,
+              color: 'white',
+              fontSize: '2rem',
+              letterSpacing: '0.5px',
+              mb: 2
             }}
-          />
+          >
+            WAATI AI
+          </Typography>
           <Typography variant="body2" sx={{ mb: 2 }}>
-            Transforming businesses through AI-powered solutions and expert consulting.
+            Empowering the next generation with AI literacy and 21st-century skills.
           </Typography>
           <Box sx={{ mb: 3 }}>
             <IconButton color="inherit" href="https://www.linkedin.com/in/sanjita-sahu/" target="_blank">
@@ -49,14 +53,14 @@ const Footer: React.FC = () => {
         </Box>
 
         <Box sx={{ textAlign: 'center', mb: 3 }}>
-          <Link href="/courses" color="inherit" sx={{ mx: 2 }}>
-            Courses
-          </Link>
-          <Link href="/consulting" color="inherit" sx={{ mx: 2 }}>
-            Consulting
+          <Link href="/" color="inherit" sx={{ mx: 2 }}>
+            Home
           </Link>
           <Link href="/about" color="inherit" sx={{ mx: 2 }}>
             About
+          </Link>
+          <Link href="/programs" color="inherit" sx={{ mx: 2 }}>
+            Programs
           </Link>
           <Link href="/contact" color="inherit" sx={{ mx: 2 }}>
             Contact
