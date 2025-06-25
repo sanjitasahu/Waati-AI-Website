@@ -1,11 +1,9 @@
 [build]
   command = "npm run build"
   publish = "build"
-  base = "waati-ai-pwa"
 
 [build.environment]
   NODE_VERSION = "18"
-  PUBLIC_URL = "/learning"
 
 [[redirects]]
   from = "/"
@@ -13,9 +11,15 @@
   status = 301
 
 [[redirects]]
+  from = "/learning"
+  to = "/learning/"
+  status = 301
+
+[[redirects]]
   from = "/learning/*"
   to = "/learning/index.html"
   status = 200
+  force = false
 
 [[headers]]
   for = "/*"
