@@ -17,7 +17,7 @@ const Courses: React.FC = () => {
 
       {/* A Month with Waati AI */}
       <Box sx={{ mb: 8 }}>
-        <Typography variant="h3" gutterBottom sx={{ mb: 4, color: 'primary.main' }}>
+        <Typography variant="h3" gutterBottom sx={{ mb: 4, color: '#008080' }}>
           A Month with Waati AI
         </Typography>
         <TableContainer component={Paper} sx={{ overflowX: 'auto', mb: 4 }}>
@@ -61,7 +61,7 @@ const Courses: React.FC = () => {
 
       {/* A Day with Waati AI */}
       <Box sx={{ mb: 8 }}>
-        <Typography variant="h3" gutterBottom sx={{ mb: 3, color: 'primary.main' }}>
+        <Typography variant="h3" gutterBottom sx={{ mb: 3, color: '#008080' }}>
           A Day with Waati AI
         </Typography>
         <Typography variant="body1" sx={{ fontSize: '1.1rem', lineHeight: 1.7 }}>
@@ -71,7 +71,7 @@ const Courses: React.FC = () => {
 
       {/* Transforming the Role of Educators */}
       <Box sx={{ mb: 8 }}>
-        <Typography variant="h3" gutterBottom sx={{ mb: 3, color: 'primary.main' }}>
+        <Typography variant="h3" gutterBottom sx={{ mb: 3, color: '#008080' }}>
           Transforming the Role of Educators
         </Typography>
         <Typography variant="body1" sx={{ mb: 3, fontSize: '1.1rem', lineHeight: 1.7 }}>
@@ -92,7 +92,7 @@ const Courses: React.FC = () => {
 
       {/* Why Waati AI Works */}
       <Box sx={{ mb: 8 }}>
-        <Typography variant="h3" gutterBottom sx={{ mb: 3, color: 'primary.main' }}>
+        <Typography variant="h3" gutterBottom sx={{ mb: 3, color: '#008080' }}>
           Why Waati AI Works
         </Typography>
         <Box sx={{ pl: 3 }}>
