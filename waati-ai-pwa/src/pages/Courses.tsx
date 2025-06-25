@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { Container, Typography, Box, Card, CardContent, Grid } from '@mui/material';
 
 const Courses: React.FC = () => {
   return (
@@ -20,40 +20,71 @@ const Courses: React.FC = () => {
         <Typography variant="h3" gutterBottom sx={{ mb: 4, color: '#008080' }}>
           A Month with Waati AI
         </Typography>
-        <TableContainer component={Paper} sx={{ overflowX: 'auto', mb: 4 }}>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell><strong>Session</strong></TableCell>
-                <TableCell><strong>Focus</strong></TableCell>
-                <TableCell><strong>Outcome</strong></TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              <TableRow>
-                <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
+        <Grid container spacing={3} sx={{ mb: 4 }}>
+          <Grid item xs={12} md={4}>
+            <Card sx={{ height: '100%', borderRadius: 3, boxShadow: 3 }}>
+              <CardContent sx={{ p: 3 }}>
+                <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#008080', mb: 2 }}>
                   Week 1
-                </TableCell>
-                <TableCell>Foundations of AI: algorithms, history, ethics</TableCell>
-                <TableCell>Confidence solving logic challenges</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
+                </Typography>
+                <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+                  Focus:
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.6 }}>
+                  Foundations of AI: algorithms, history, ethics
+                </Typography>
+                <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+                  Outcome:
+                </Typography>
+                <Typography variant="body1" sx={{ lineHeight: 1.6 }}>
+                  Confidence solving logic challenges
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Card sx={{ height: '100%', borderRadius: 3, boxShadow: 3 }}>
+              <CardContent sx={{ p: 3 }}>
+                <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#008080', mb: 2 }}>
                   Week 2
-                </TableCell>
-                <TableCell>Hands-on ML: data collection, training basic models</TableCell>
-                <TableCell>Build a simple image-recognition prototype</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
+                </Typography>
+                <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+                  Focus:
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.6 }}>
+                  Hands-on ML: data collection, training basic models
+                </Typography>
+                <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+                  Outcome:
+                </Typography>
+                <Typography variant="body1" sx={{ lineHeight: 1.6 }}>
+                  Build a simple image-recognition prototype
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Card sx={{ height: '100%', borderRadius: 3, boxShadow: 3 }}>
+              <CardContent sx={{ p: 3 }}>
+                <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#008080', mb: 2 }}>
                   Week 3
-                </TableCell>
-                <TableCell>Advanced Applications: NLP, capstone ideation</TableCell>
-                <TableCell>Pitch a real-world AI solution to peers & mentors</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </TableContainer>
+                </Typography>
+                <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+                  Focus:
+                </Typography>
+                <Typography variant="body1" sx={{ mb: 3, lineHeight: 1.6 }}>
+                  Advanced Applications: NLP, capstone ideation
+                </Typography>
+                <Typography variant="h6" sx={{ fontWeight: 'bold', mb: 2 }}>
+                  Outcome:
+                </Typography>
+                <Typography variant="body1" sx={{ lineHeight: 1.6 }}>
+                  Pitch a real-world AI solution to peers & mentors
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
         <Typography variant="body1" sx={{ fontStyle: 'italic', color: 'text.secondary' }}>
           Outside these sessions, students use their new "gift of time" to explore clubs, sports, or passion projects—fostering creativity, leadership, and critical thinking.
         </Typography>
