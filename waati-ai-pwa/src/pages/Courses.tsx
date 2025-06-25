@@ -1,42 +1,22 @@
 import React from 'react';
-import { Container, Typography, Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from '@mui/material';
-// import { Link } from 'react-router-dom';
-import { formatINR, formatCAD, inrToCad } from '../utils/currency';
+import { Container, Typography, Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, List, ListItem, ListItemText } from '@mui/material';
 
 const Courses: React.FC = () => {
-  const tracks = [
+  const monthlySchedule = [
     {
-      name: 'AI Foundations',
-      duration: '8 weeks',
-      liveHours: '2',
-      modules: 'Python Basics • Data Wrangling • Classical ML'
+      session: 'Week 1',
+      focus: 'Foundations of AI: algorithms, history, ethics',
+      outcome: 'Confidence solving logic challenges'
     },
     {
-      name: 'Applied Gen AI',
-      duration: '6 weeks',
-      liveHours: '2',
-      modules: 'Prompt Engineering • LLM Agents • Vector DBs'
+      session: 'Week 2',
+      focus: 'Hands-on ML: data collection, training basic models',
+      outcome: 'Build a simple image-recognition prototype'
     },
     {
-      name: 'MLOps Fast-Track',
-      duration: '6 weeks',
-      liveHours: '2',
-      modules: 'CI/CD for Models • Monitoring • Cost Optimisation'
-    }
-  ];
-
-  const pricing = [
-    {
-      plan: 'Open cohort (per track)',
-      learnerCount: 'per learner',
-      inrPrice: 5000,
-      cadPrice: inrToCad(5000)
-    },
-    {
-      plan: 'Private cohort',
-      learnerCount: 'up to 25',
-      inrPrice: 100000,
-      cadPrice: inrToCad(100000)
+      session: 'Week 3',
+      focus: 'Advanced Applications: NLP, capstone ideation',
+      outcome: 'Pitch a real-world AI solution to peers & mentors'
     }
   ];
 
@@ -44,88 +24,116 @@ const Courses: React.FC = () => {
     <Container maxWidth="lg" sx={{ py: 8 }}>
       <Box textAlign="center" sx={{ mb: 8 }}>
         <Typography variant="h2" component="h1" gutterBottom>
-          Expert-Led AI Courses
+          Our Programs
         </Typography>
         <Typography variant="h5" color="text.secondary" sx={{ fontStyle: 'italic' }}>
-          Live, cohort-based, hands-on.
+          Transforming education through AI-powered learning
         </Typography>
       </Box>
 
+      {/* A Month with Waati AI */}
       <Box sx={{ mb: 8 }}>
-        <Typography variant="h4" gutterBottom sx={{ mb: 4 }}>
-          Tracks & Syllabi
+        <Typography variant="h3" gutterBottom sx={{ mb: 4, color: 'primary.main' }}>
+          A Month with Waati AI
         </Typography>
-        <TableContainer component={Paper} sx={{ overflowX: 'auto' }}>
+        <TableContainer component={Paper} sx={{ overflowX: 'auto', mb: 4 }}>
           <Table>
             <TableHead>
               <TableRow>
-                <TableCell>Track</TableCell>
-                <TableCell>Duration</TableCell>
-                <TableCell>Weekly Live Hours</TableCell>
-                <TableCell>Key Modules</TableCell>
+                <TableCell><strong>Session</strong></TableCell>
+                <TableCell><strong>Focus</strong></TableCell>
+                <TableCell><strong>Outcome</strong></TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
-              {tracks.map((track) => (
-                <TableRow key={track.name}>
-                  <TableCell component="th" scope="row">
-                    {track.name}
+              {monthlySchedule.map((week) => (
+                <TableRow key={week.session}>
+                  <TableCell component="th" scope="row" sx={{ fontWeight: 'bold' }}>
+                    {week.session}
                   </TableCell>
-                  <TableCell>{track.duration}</TableCell>
-                  <TableCell>{track.liveHours}</TableCell>
-                  <TableCell>{track.modules}</TableCell>
+                  <TableCell>{week.focus}</TableCell>
+                  <TableCell>{week.outcome}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </TableContainer>
-      </Box>
-
-      <Box sx={{ mb: 8 }}>
-        <Typography variant="h4" gutterBottom sx={{ mb: 4 }}>
-          Pricing
+        <Typography variant="body1" sx={{ fontStyle: 'italic', color: 'text.secondary' }}>
+          Outside these sessions, students use their new "gift of time" to explore clubs, sports, or passion projects—fostering creativity, leadership, and critical thinking.
         </Typography>
-        <TableContainer component={Paper} sx={{ overflowX: 'auto' }}>
-          <Table>
-            <TableHead>
-              <TableRow>
-                <TableCell>Plan</TableCell>
-                <TableCell align="right">Learner Count</TableCell>
-                <TableCell align="right">Price (₹)</TableCell>
-                <TableCell align="right">Price (CA$)</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {pricing.map((row) => (
-                <TableRow key={row.plan}>
-                  <TableCell component="th" scope="row">
-                    {row.plan}
-                  </TableCell>
-                  <TableCell align="right">{row.learnerCount}</TableCell>
-                  <TableCell align="right" sx={{ fontWeight: 'bold' }}>
-                    {formatINR(row.inrPrice)}
-                  </TableCell>
-                  <TableCell align="right" sx={{ fontWeight: 'bold' }}>
-                    {formatCAD(row.cadPrice)}
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
       </Box>
 
-      <Box sx={{ textAlign: 'center' }}>
-        <Button
-          variant="contained"
-          size="large"
-          component="a"
-          href="/syllabus.pdf"
-          download
-          sx={{ px: 4, py: 1.5 }}
-        >
-          Download full syllabus (INR / CAD)
-        </Button>
+      {/* A Day with Waati AI */}
+      <Box sx={{ mb: 8 }}>
+        <Typography variant="h3" gutterBottom sx={{ mb: 3, color: 'primary.main' }}>
+          A Day with Waati AI
+        </Typography>
+        <Typography variant="body1" sx={{ fontSize: '1.1rem', lineHeight: 1.7 }}>
+          Students dive into interactive AI-powered academic sessions, mastering concepts 2x faster with hands-on projects and real-world datasets. Instructors provide motivational support and high expectations to foster growth.
+        </Typography>
+      </Box>
+
+      {/* Transforming the Role of Educators */}
+      <Box sx={{ mb: 8 }}>
+        <Typography variant="h3" gutterBottom sx={{ mb: 3, color: 'primary.main' }}>
+          Transforming the Role of Educators
+        </Typography>
+        <Typography variant="body1" sx={{ mb: 3, fontSize: '1.1rem', lineHeight: 1.7 }}>
+          With Waati AI, teachers shift from traditional tasks like grading and lesson plan creation to becoming mentors, coaches, and guides:
+        </Typography>
+        <List sx={{ pl: 2 }}>
+          <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
+            <ListItemText 
+              primary={<strong>Mentor:</strong>}
+              secondary="Provide emotional encouragement and ethical perspectives on AI projects."
+            />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
+            <ListItemText 
+              primary={<strong>Coach:</strong>}
+              secondary="Support students through troubleshooting code, refining prototypes, and presenting ideas with confidence."
+            />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
+            <ListItemText 
+              primary={<strong>Facilitator:</strong>}
+              secondary="Curate tools, datasets, and project ideas that resonate with students' interests and school objectives."
+            />
+          </ListItem>
+        </List>
+      </Box>
+
+      {/* Why Waati AI Works */}
+      <Box sx={{ mb: 8 }}>
+        <Typography variant="h3" gutterBottom sx={{ mb: 3, color: 'primary.main' }}>
+          Why Waati AI Works
+        </Typography>
+        <List sx={{ pl: 2 }}>
+          <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
+            <ListItemText 
+              primary={<strong>Personalized Learning Pathways:</strong>}
+              secondary="Every student progresses at their own pace through AI modules tailored to their grade level and interests."
+            />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
+            <ListItemText 
+              primary={<strong>Project-Based Mastery:</strong>}
+              secondary="Theory meets practice: from chatbots to data-driven social impact projects, learners see AI in action."
+            />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
+            <ListItemText 
+              primary={<strong>Ethics & Empathy Built In:</strong>}
+              secondary="We integrate discussions on bias, privacy, and societal impact so students become responsible innovators."
+            />
+          </ListItem>
+          <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
+            <ListItemText 
+              primary={<strong>Sustainable Implementation:</strong>}
+              secondary="Our Teacher Academy and resource portal ensure that AI education continues long after our trainers leave campus."
+            />
+          </ListItem>
+        </List>
       </Box>
     </Container>
   );
