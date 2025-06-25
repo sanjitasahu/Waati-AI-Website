@@ -94,7 +94,7 @@ const App: React.FC = () => {
               <main style={{ flex: 1 }}>
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/courses" element={<Courses />} />
+                  <Route path="/programs" element={<Courses />} />
                   <Route path="/consulting" element={<Consulting />} />
                   <Route path="/growth" element={<Growth />} />
                   <Route path="/about" element={<About />} />
