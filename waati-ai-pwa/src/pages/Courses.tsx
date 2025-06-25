@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Box, Card, CardContent, Grid } from '@mui/material';
+import { Container, Typography, Box, Card, CardContent } from '@mui/material';
 
 const Courses: React.FC = () => {
   return (
@@ -20,8 +20,13 @@ const Courses: React.FC = () => {
         <Typography variant="h3" gutterBottom sx={{ mb: 4, color: '#008080' }}>
           A Month with Waati AI
         </Typography>
-        <Grid container spacing={3} sx={{ mb: 4 }}>
-          <Grid item xs={12} md={4}>
+        <Box sx={{ 
+          display: 'flex', 
+          flexDirection: { xs: 'column', md: 'row' },
+          gap: 3,
+          mb: 4 
+        }}>
+          <Box sx={{ flex: 1 }}>
             <Card sx={{ height: '100%', borderRadius: 3, boxShadow: 3 }}>
               <CardContent sx={{ p: 3 }}>
                 <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#008080', mb: 2 }}>
@@ -41,8 +46,8 @@ const Courses: React.FC = () => {
                 </Typography>
               </CardContent>
             </Card>
-          </Grid>
-          <Grid item xs={12} md={4}>
+          </Box>
+          <Box sx={{ flex: 1 }}>
             <Card sx={{ height: '100%', borderRadius: 3, boxShadow: 3 }}>
               <CardContent sx={{ p: 3 }}>
                 <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#008080', mb: 2 }}>
@@ -62,8 +67,8 @@ const Courses: React.FC = () => {
                 </Typography>
               </CardContent>
             </Card>
-          </Grid>
-          <Grid item xs={12} md={4}>
+          </Box>
+          <Box sx={{ flex: 1 }}>
             <Card sx={{ height: '100%', borderRadius: 3, boxShadow: 3 }}>
               <CardContent sx={{ p: 3 }}>
                 <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#008080', mb: 2 }}>
@@ -83,8 +88,8 @@ const Courses: React.FC = () => {
                 </Typography>
               </CardContent>
             </Card>
-          </Grid>
-        </Grid>
+          </Box>
+        </Box>
         <Typography variant="body1" sx={{ fontStyle: 'italic', color: 'text.secondary' }}>
           Outside these sessions, students use their new "gift of time" to explore clubs, sports, or passion projects—fostering creativity, leadership, and critical thinking.
         </Typography>
