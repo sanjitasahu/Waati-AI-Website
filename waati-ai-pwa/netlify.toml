@@ -8,18 +8,12 @@
 [[redirects]]
   from = "/"
   to = "/learning/"
-  status = 301
-
-[[redirects]]
-  from = "/learning"
-  to = "/learning/"
-  status = 301
+  status = 302
 
 [[redirects]]
   from = "/learning/*"
-  to = "/learning/index.html"
+  to = "/index.html"
   status = 200
-  force = false
 
 [[headers]]
   for = "/*"
