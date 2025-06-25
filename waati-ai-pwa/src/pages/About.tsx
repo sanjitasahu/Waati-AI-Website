@@ -66,6 +66,7 @@ const About: React.FC = () => {
       >
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
           <Typography variant="h2" component="h1" gutterBottom sx={{ 
+            fontFamily: '"Chalkboard", "Chalkduster", "Comic Neue", sans-serif',
             fontWeight: 'bold', 
             mb: 2,
             color: 'white',

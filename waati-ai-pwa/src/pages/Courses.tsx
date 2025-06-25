@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, List, ListItem, ListItemText } from '@mui/material';
+import { Container, Typography, Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 
 const Courses: React.FC = () => {
   const monthlySchedule = [
@@ -23,7 +23,9 @@ const Courses: React.FC = () => {
   return (
     <Container maxWidth="lg" sx={{ py: 8 }}>
       <Box textAlign="center" sx={{ mb: 8 }}>
-        <Typography variant="h2" component="h1" gutterBottom>
+        <Typography variant="h2" component="h1" gutterBottom sx={{
+          fontFamily: '"Chalkboard", "Chalkduster", "Comic Neue", sans-serif'
+        }}>
           Our Programs
         </Typography>
         <Typography variant="h5" color="text.secondary" sx={{ fontStyle: 'italic' }}>
@@ -81,26 +83,17 @@ const Courses: React.FC = () => {
         <Typography variant="body1" sx={{ mb: 3, fontSize: '1.1rem', lineHeight: 1.7 }}>
           With Waati AI, teachers shift from traditional tasks like grading and lesson plan creation to becoming mentors, coaches, and guides:
         </Typography>
-        <List sx={{ pl: 2 }}>
-          <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
-            <ListItemText 
-              primary={<Box component="span" sx={{ fontWeight: 'bold' }}>Mentor:</Box>}
-              secondary="Provide emotional encouragement and ethical perspectives on AI projects."
-            />
-          </ListItem>
-          <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
-            <ListItemText 
-              primary={<Box component="span" sx={{ fontWeight: 'bold' }}>Coach:</Box>}
-              secondary="Support students through troubleshooting code, refining prototypes, and presenting ideas with confidence."
-            />
-          </ListItem>
-          <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
-            <ListItemText 
-              primary={<Box component="span" sx={{ fontWeight: 'bold' }}>Facilitator:</Box>}
-              secondary="Curate tools, datasets, and project ideas that resonate with students' interests and school objectives."
-            />
-          </ListItem>
-        </List>
+        <Box sx={{ pl: 3 }}>
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            <Box component="span" sx={{ fontWeight: 'bold' }}>• Mentor:</Box> Provide emotional encouragement and ethical perspectives on AI projects.
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            <Box component="span" sx={{ fontWeight: 'bold' }}>• Coach:</Box> Support students through troubleshooting code, refining prototypes, and presenting ideas with confidence.
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            <Box component="span" sx={{ fontWeight: 'bold' }}>• Facilitator:</Box> Curate tools, datasets, and project ideas that resonate with students' interests and school objectives.
+          </Typography>
+        </Box>
       </Box>
 
       {/* Why Waati AI Works */}
@@ -108,32 +101,20 @@ const Courses: React.FC = () => {
         <Typography variant="h3" gutterBottom sx={{ mb: 3, color: 'primary.main' }}>
           Why Waati AI Works
         </Typography>
-        <List sx={{ pl: 2 }}>
-          <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
-            <ListItemText 
-              primary={<Box component="span" sx={{ fontWeight: 'bold' }}>Personalized Learning Pathways:</Box>}
-              secondary="Every student progresses at their own pace through AI modules tailored to their grade level and interests."
-            />
-          </ListItem>
-          <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
-            <ListItemText 
-              primary={<Box component="span" sx={{ fontWeight: 'bold' }}>Project-Based Mastery:</Box>}
-              secondary="Theory meets practice: from chatbots to data-driven social impact projects, learners see AI in action."
-            />
-          </ListItem>
-          <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
-            <ListItemText 
-              primary={<Box component="span" sx={{ fontWeight: 'bold' }}>Ethics & Empathy Built In:</Box>}
-              secondary="We integrate discussions on bias, privacy, and societal impact so students become responsible innovators."
-            />
-          </ListItem>
-          <ListItem sx={{ display: 'list-item', listStyleType: 'disc', pl: 1 }}>
-            <ListItemText 
-              primary={<Box component="span" sx={{ fontWeight: 'bold' }}>Sustainable Implementation:</Box>}
-              secondary="Our Teacher Academy and resource portal ensure that AI education continues long after our trainers leave campus."
-            />
-          </ListItem>
-        </List>
+        <Box sx={{ pl: 3 }}>
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            <Box component="span" sx={{ fontWeight: 'bold' }}>• Personalized Learning Pathways:</Box> Every student progresses at their own pace through AI modules tailored to their grade level and interests.
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            <Box component="span" sx={{ fontWeight: 'bold' }}>• Project-Based Mastery:</Box> Theory meets practice: from chatbots to data-driven social impact projects, learners see AI in action.
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            <Box component="span" sx={{ fontWeight: 'bold' }}>• Ethics & Empathy Built In:</Box> We integrate discussions on bias, privacy, and societal impact so students become responsible innovators.
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 2 }}>
+            <Box component="span" sx={{ fontWeight: 'bold' }}>• Sustainable Implementation:</Box> Our Teacher Academy and resource portal ensure that AI education continues long after our trainers leave campus.
+          </Typography>
+        </Box>
       </Box>
     </Container>
   );
