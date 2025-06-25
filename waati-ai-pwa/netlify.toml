@@ -4,6 +4,7 @@
   base = "waati-ai-pwa"
 
 [build.environment]
+  NODE_VERSION = "18"
   PUBLIC_URL = "/learning"
 
 [[redirects]]
@@ -15,9 +16,6 @@
   from = "/*"
   to = "/learning/"
   status = 301
-
-[build.environment]
-  NODE_VERSION = "18"
 
 [[headers]]
   for = "/*"
