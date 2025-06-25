@@ -8,14 +8,14 @@
   PUBLIC_URL = "/learning"
 
 [[redirects]]
+  from = "/"
+  to = "/learning/"
+  status = 301
+
+[[redirects]]
   from = "/learning/*"
   to = "/learning/index.html"
   status = 200
-
-[[redirects]]
-  from = "/*"
-  to = "/learning/"
-  status = 301
 
 [[headers]]
   for = "/*"
