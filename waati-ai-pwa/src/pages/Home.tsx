@@ -77,26 +77,7 @@ const fadeInLoop = keyframes`
 const cardSlideIn = keyframes`
   0% {
     opacity: 0;
-    transform: translateY(80px) scale(0.8) rotateX(20deg);
-  }
-  50% {
-    opacity: 0.8;
-    transform: translateY(20px) scale(0.95) rotateX(10deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1) rotateX(0deg);
-  }
-`;
-
-const textReveal = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(30px) scale(0.9);
-  }
-  50% {
-    opacity: 0.5;
-    transform: translateY(10px) scale(0.95);
+    transform: translateY(80px) scale(0.8);
   }
   100% {
     opacity: 1;
@@ -104,12 +85,34 @@ const textReveal = keyframes`
   }
 `;
 
-const pulseGlow = keyframes`
+const textReveal = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const cardFloat = keyframes`
   0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+`;
+
+const cardPulse = keyframes`
+  0%, 100% {
+    transform: scale(1);
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
   }
   50% {
-    box-shadow: 0 12px 40px rgba(255, 107, 107, 0.3);
+    transform: scale(1.02);
+    box-shadow: 0 16px 50px rgba(255, 107, 107, 0.25);
   }
 `;
 
@@ -663,7 +666,7 @@ const Home: React.FC = () => {
                     position: 'relative',
                     boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
                     overflow: 'hidden',
-                    animation: `${cardSlideIn} 1.2s ease-out ${index * 0.5}s both, ${pulseGlow} 2s ease-in-out ${index * 0.5 + 1.5}s infinite`,
+                    animation: `${cardSlideIn} 1s ease-out ${index * 0.3}s both, ${cardFloat} 3s ease-in-out ${index * 0.3 + 1.5}s infinite`,
                     transition: 'all 0.4s ease',
                     textDecoration: 'none',
                     cursor: 'pointer',
@@ -678,8 +681,9 @@ const Home: React.FC = () => {
                       zIndex: 1
                     },
                     '&:hover': {
-                      transform: 'translateY(-12px) scale(1.02)',
-                      boxShadow: '0 20px 60px rgba(0, 0, 0, 0.25)',
+                      transform: 'translateY(-12px) scale(1.05)',
+                      boxShadow: '0 25px 70px rgba(0, 0, 0, 0.3)',
+                      animation: `${cardPulse} 0.6s ease-in-out`,
                       '&::before': {
                         background: 'linear-gradient(to top, rgba(7, 59, 76, 0.9), rgba(7, 59, 76, 0.4))'
                       }
@@ -689,7 +693,7 @@ const Home: React.FC = () => {
                   <Box sx={{ 
                     position: 'relative', 
                     zIndex: 2,
-                    animation: `${textReveal} 1s ease-out ${index * 0.5 + 0.8}s both`
+                    animation: `${textReveal} 0.8s ease-out ${index * 0.3 + 0.6}s both`
                   }}>
                     <Typography variant="h6" sx={{ 
                       fontWeight: 700,
