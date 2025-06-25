@@ -240,7 +240,7 @@ const Home: React.FC = () => {
             textAlign: 'center'
           }}>
               <Typography variant="h1" component="h1" sx={{ 
-                fontFamily: '"Poppins", "Inter", sans-serif',
+                fontFamily: '"Comic Neue", "Poppins", "Inter", sans-serif',
                 fontWeight: 700,
                 fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem', lg: '4rem' },
                 mb: 3,
