@@ -3,10 +3,18 @@
   publish = "build"
   base = "waati-ai-pwa"
 
+[build.environment]
+  PUBLIC_URL = "/learning"
+
+[[redirects]]
+  from = "/learning/*"
+  to = "/learning/index.html"
+  status = 200
+
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
+  to = "/learning/"
+  status = 301
 
 [build.environment]
   NODE_VERSION = "18"

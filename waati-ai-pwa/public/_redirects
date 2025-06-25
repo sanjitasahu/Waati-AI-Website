@@ -1,0 +1,9 @@
+# Redirect root to learning subdirectory for now
+/ /learning/ 301
+
+# Handle React Router for learning section
+/learning/* /learning/index.html 200
+
+# Future redirects for other sections (when ready)
+# /consulting/* /consulting/index.html 200
+# /products/* /products/index.html 200
