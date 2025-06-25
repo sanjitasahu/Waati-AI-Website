@@ -26,14 +26,6 @@ const fadeInUp = keyframes`
   }
 `;
 
-const float = keyframes`
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-`;
 
 const StyledLink = styled(RouterLink)(({ theme }) => ({
   color: 'inherit',
