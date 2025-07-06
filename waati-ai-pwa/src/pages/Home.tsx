@@ -309,7 +309,7 @@ const Home: React.FC = () => {
                 <AnimatedButton
                   variant="outlined"
                   size="large"
-                  href="/contact"
+                  href="/programs"
                   sx={{
                     borderColor: '#073B4C',
                     borderWidth: '2px',
@@ -353,39 +353,45 @@ const Home: React.FC = () => {
               flex: { xs: '1 1 100%', md: '1 1 45%' },
               maxWidth: '500px'
             }}>
-              <Box sx={{
-                backgroundImage: 'url("/Students.jpg")',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                p: { xs: 4, md: 5 },
-                borderRadius: '20px',
-                boxShadow: '0 8px 32px rgba(0, 128, 128, 0.15)',
-                transition: 'all 0.3s ease',
-                height: { xs: '300px', md: '350px' },
-                border: '2px solid rgba(0, 128, 128, 0.1)',
-                position: 'relative',
-                overflow: 'hidden',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'flex-end',
-                textAlign: 'center',
-                '&::before': {
-                  content: '""',
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  background: 'linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%)',
-                  zIndex: 1
-                },
-                '&:hover': {
-                  transform: 'translateY(-8px)',
-                  boxShadow: '0 16px 48px rgba(0, 128, 128, 0.25)',
-                  borderColor: '#008080',
-                }
-              }}>
+              <Box 
+                component={RouterLink}
+                to="/programs#students"
+                sx={{
+                  backgroundImage: 'url("/Students.jpg")',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  p: { xs: 4, md: 5 },
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 32px rgba(0, 128, 128, 0.15)',
+                  transition: 'all 0.3s ease',
+                  height: { xs: '300px', md: '350px' },
+                  border: '2px solid rgba(0, 128, 128, 0.1)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'flex-end',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  '&::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: 'linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%)',
+                    zIndex: 1
+                  },
+                  '&:hover': {
+                    transform: 'translateY(-8px)',
+                    boxShadow: '0 16px 48px rgba(0, 128, 128, 0.25)',
+                    borderColor: '#008080',
+                  }
+                }}
+              >
                 <Box sx={{ position: 'relative', zIndex: 2 }}>
                   <Typography variant="h4" sx={{ 
                     fontWeight: 700,
@@ -404,6 +410,15 @@ const Home: React.FC = () => {
                   }}>
                     Build your first chatbot, train an image-recognition model, and solve real-world puzzles—no prior coding required.
                   </Typography>
+                  <Typography variant="body2" sx={{ 
+                    color: 'white', 
+                    mt: 2,
+                    fontSize: '1rem',
+                    textShadow: '0 1px 3px rgba(0,0,0,0.7)',
+                    fontWeight: 600
+                  }}>
+                    Click to learn more →
+                  </Typography>
                 </Box>
               </Box>
             </Box>
@@ -413,39 +428,45 @@ const Home: React.FC = () => {
               flex: { xs: '1 1 100%', md: '1 1 45%' },
               maxWidth: '500px'
             }}>
-              <Box sx={{
-                backgroundImage: 'url("/parents.jpg")',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                p: { xs: 4, md: 5 },
-                borderRadius: '20px',
-                boxShadow: '0 8px 32px rgba(255, 107, 107, 0.15)',
-                transition: 'all 0.3s ease',
-                height: { xs: '300px', md: '350px' },
-                border: '2px solid rgba(255, 107, 107, 0.1)',
-                position: 'relative',
-                overflow: 'hidden',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'flex-end',
-                textAlign: 'center',
-                '&::before': {
-                  content: '""',
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  background: 'linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%)',
-                  zIndex: 1
-                },
-                '&:hover': {
-                  transform: 'translateY(-8px)',
-                  boxShadow: '0 16px 48px rgba(255, 107, 107, 0.25)',
-                  borderColor: '#FF6B6B',
-                }
-              }}>
+              <Box 
+                component={RouterLink}
+                to="/programs#parents"
+                sx={{
+                  backgroundImage: 'url("/parents.jpg")',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  p: { xs: 4, md: 5 },
+                  borderRadius: '20px',
+                  boxShadow: '0 8px 32px rgba(255, 107, 107, 0.15)',
+                  transition: 'all 0.3s ease',
+                  height: { xs: '300px', md: '350px' },
+                  border: '2px solid rgba(255, 107, 107, 0.1)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'flex-end',
+                  textAlign: 'center',
+                  textDecoration: 'none',
+                  cursor: 'pointer',
+                  '&::before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    background: 'linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.1) 100%)',
+                    zIndex: 1
+                  },
+                  '&:hover': {
+                    transform: 'translateY(-8px)',
+                    boxShadow: '0 16px 48px rgba(255, 107, 107, 0.25)',
+                    borderColor: '#FF6B6B',
+                  }
+                }}
+              >
                 <Box sx={{ position: 'relative', zIndex: 2 }}>
                   <Typography variant="h4" sx={{ 
                     fontWeight: 700,
@@ -463,6 +484,15 @@ const Home: React.FC = () => {
                     textShadow: '0 1px 3px rgba(0,0,0,0.7)'
                   }}>
                     Give your child the edge with essential 21st-century skills, guided by expert instructors and ethical learning.
+                  </Typography>
+                  <Typography variant="body2" sx={{ 
+                    color: 'white', 
+                    mt: 2,
+                    fontSize: '1rem',
+                    textShadow: '0 1px 3px rgba(0,0,0,0.7)',
+                    fontWeight: 600
+                  }}>
+                    Click to learn more →
                   </Typography>
                 </Box>
               </Box>
@@ -535,6 +565,190 @@ const Home: React.FC = () => {
                 </Box>
               </Box>
             ))}
+          </Box>
+        </Container>
+      </Box>
+
+      {/* Meet Our Founders Section */}
+      <Box sx={{ 
+        py: { xs: '60px', md: '80px' }, 
+        backgroundColor: '#ffffff',
+        position: 'relative'
+      }}>
+        <Container maxWidth="lg">
+          <Box sx={{ textAlign: 'center', mb: 8 }}>
+            <Typography variant="h2" component="h2" gutterBottom sx={{ 
+              fontWeight: 800,
+              color: '#073B4C',
+              fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
+              mb: 4
+            }}>
+              Meet Our Founders
+            </Typography>
+            <Typography variant="h5" sx={{ 
+              color: '#073B4C', 
+              fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.5rem' },
+              lineHeight: 1.6,
+              fontWeight: 400,
+              opacity: 0.8,
+              maxWidth: '800px',
+              mx: 'auto',
+              mb: 6
+            }}>
+              The passionate minds behind Waati AI Consulting, dedicated to bringing AI education to every student.
+            </Typography>
+          </Box>
+          
+          <Box sx={{ 
+            display: 'flex', 
+            flexDirection: { xs: 'column', lg: 'row' }, 
+            gap: 4,
+            justifyContent: 'center',
+            alignItems: 'stretch'
+          }}>
+            {/* Sanjita Card */}
+            <Box sx={{ flex: 1, maxWidth: '400px' }}>
+              <Box sx={{
+                p: 4,
+                borderRadius: '20px',
+                backgroundColor: '#F8F9FA',
+                border: '2px solid rgba(0, 128, 128, 0.1)',
+                transition: 'all 0.3s ease',
+                height: '100%',
+                textAlign: 'center',
+                '&:hover': {
+                  transform: 'translateY(-8px)',
+                  boxShadow: '0 16px 48px rgba(0, 128, 128, 0.2)',
+                  borderColor: '#008080',
+                }
+              }}>
+                <Box
+                  component="img"
+                  src="/sanjita-profile.jpg"
+                  alt="Sanjita Sahu"
+                  sx={{
+                    width: 120,
+                    height: 120,
+                    borderRadius: '50%',
+                    mb: 3,
+                    border: '4px solid #008080',
+                    objectFit: 'cover'
+                  }}
+                />
+                <Typography variant="h4" sx={{ 
+                  fontWeight: 700,
+                  color: '#073B4C',
+                  mb: 1
+                }}>
+                  Sanjita Sahu
+                </Typography>
+                <Typography variant="h6" sx={{ 
+                  color: '#008080',
+                  mb: 3,
+                  fontWeight: 600
+                }}>
+                  Co-Founder & AI Product Lead
+                </Typography>
+                <Typography variant="body1" sx={{ 
+                  color: '#073B4C',
+                  lineHeight: 1.6,
+                  mb: 3,
+                  opacity: 0.8
+                }}>
+                  Innovative AI Product Lead with expertise in AI-driven products, automation solutions, and scaling advanced AI systems.
+                </Typography>
+                <StyledLink to="/about#sanjita">
+                  <Button
+                    variant="outlined"
+                    size="medium"
+                    sx={{
+                      borderColor: '#008080',
+                      color: '#008080',
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        borderColor: '#006666',
+                        backgroundColor: 'rgba(0, 128, 128, 0.1)',
+                        transform: 'translateY(-2px)',
+                      }
+                    }}
+                  >
+                    Learn More
+                  </Button>
+                </StyledLink>
+              </Box>
+            </Box>
+
+            {/* Sourav Card */}
+            <Box sx={{ flex: 1, maxWidth: '400px' }}>
+              <Box sx={{
+                p: 4,
+                borderRadius: '20px',
+                backgroundColor: '#F8F9FA',
+                border: '2px solid rgba(255, 107, 107, 0.1)',
+                transition: 'all 0.3s ease',
+                height: '100%',
+                textAlign: 'center',
+                '&:hover': {
+                  transform: 'translateY(-8px)',
+                  boxShadow: '0 16px 48px rgba(255, 107, 107, 0.2)',
+                  borderColor: '#FF6B6B',
+                }
+              }}>
+                <Box
+                  component="img"
+                  src="/sourav-profile.jpg"
+                  alt="Sourav Sahu"
+                  sx={{
+                    width: 120,
+                    height: 120,
+                    borderRadius: '50%',
+                    mb: 3,
+                    border: '4px solid #FF6B6B',
+                    objectFit: 'cover'
+                  }}
+                />
+                <Typography variant="h4" sx={{ 
+                  fontWeight: 700,
+                  color: '#073B4C',
+                  mb: 1
+                }}>
+                  Sourav Sahu
+                </Typography>
+                <Typography variant="h6" sx={{ 
+                  color: '#FF6B6B',
+                  mb: 3,
+                  fontWeight: 600
+                }}>
+                  Co-Founder & Business Lead
+                </Typography>
+                <Typography variant="body1" sx={{ 
+                  color: '#073B4C',
+                  lineHeight: 1.6,
+                  mb: 3,
+                  opacity: 0.8
+                }}>
+                  Strategic business leader specializing in AI/ML SaaS, business transformation, and customer experience enhancement.
+                </Typography>
+                <StyledLink to="/about#sourav">
+                  <Button
+                    variant="outlined"
+                    size="medium"
+                    sx={{
+                      borderColor: '#FF6B6B',
+                      color: '#FF6B6B',
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        borderColor: '#e55a5a',
+                        backgroundColor: 'rgba(255, 107, 107, 0.1)',
+                        transform: 'translateY(-2px)',
+                      }
+                    }}
+                  >
+                    Learn More
+                  </Button>
+                </StyledLink>
+              </Box>
+            </Box>
           </Box>
         </Container>
       </Box>
