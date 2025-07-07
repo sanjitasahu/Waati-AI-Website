@@ -1,45 +1,67 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { render, screen, within } from '@testing-library/react';
 import Consulting from '../Consulting';
 
 describe('Consulting Page', () => {
-  const renderWithRouter = (component: React.ReactElement) => {
-    return render(
-      <BrowserRouter>
-        {component}
-      </BrowserRouter>
-    );
-  };
-
   it('renders the main heading', () => {
-    renderWithRouter(<Consulting />);
-    expect(screen.getByText('AI Business Consulting')).toBeInTheDocument();
+    render(<Consulting />);
+    expect(screen.getByText('AI Consulting Services')).toBeInTheDocument();
   });
 
   it('renders the subtitle', () => {
-    renderWithRouter(<Consulting />);
-    expect(screen.getByText('Transform your org from pilot to production.')).toBeInTheDocument();
+    render(<Consulting />);
+    expect(screen.getByText('Expert guidance on AI platform selection and automation implementation')).toBeInTheDocument();
   });
 
-  it('renders the engagement phases', () => {
-    renderWithRouter(<Consulting />);
-    expect(screen.getByText('3-Phase Engagement')).toBeInTheDocument();
-    expect(screen.getByText('Opportunity Sprint')).toBeInTheDocument();
-    expect(screen.getByText('Pilot Build & Deploy')).toBeInTheDocument();
-    expect(screen.getByText('Enable & Scale')).toBeInTheDocument();
+  it('renders the services section', () => {
+    render(<Consulting />);
+    expect(screen.getByText('Our Services')).toBeInTheDocument();
+    expect(screen.getByText('AI Platform Assessment')).toBeInTheDocument();
+    expect(screen.getByText('Automation Strategy & Implementation')).toBeInTheDocument();
+    expect(screen.getByText('AI Integration Consulting')).toBeInTheDocument();
+    expect(screen.getByText('Team Training & Enablement')).toBeInTheDocument();
   });
 
-  it('renders the ROI section', () => {
-    renderWithRouter(<Consulting />);
-    expect(screen.getByText('Typical ROI')).toBeInTheDocument();
-    expect(screen.getByText('20% cost reduction in 120 days')).toBeInTheDocument();
+  it('renders the platforms section', () => {
+    render(<Consulting />);
+    expect(screen.getByText('Platforms We Specialize In')).toBeInTheDocument();
+    expect(screen.getByText('n8n')).toBeInTheDocument();
+    expect(screen.getByText('Copilot Studio')).toBeInTheDocument();
+  });
+
+  it('renders the process section', () => {
+    render(<Consulting />);
+    expect(screen.getByText('Our Process')).toBeInTheDocument();
+    expect(screen.getByText('Discovery & Assessment')).toBeInTheDocument();
+    expect(screen.getByText('Platform Selection')).toBeInTheDocument();
+  });
+
+  it('renders the testimonials section', () => {
+    render(<Consulting />);
+    expect(screen.getByText('What Our Clients Say')).toBeInTheDocument();
+    expect(screen.getByText('Sarah Chen')).toBeInTheDocument();
+    expect(screen.getByText('Rajesh Kumar')).toBeInTheDocument();
+  });
+
+  it('renders the why choose us section', () => {
+    render(<Consulting />);
+    expect(screen.getByText('Why Choose Waati AI')).toBeInTheDocument();
+    expect(screen.getByText('Proven Results')).toBeInTheDocument();
+    expect(screen.getByText('Technical Expertise')).toBeInTheDocument();
   });
 
   it('renders the discovery call button', () => {
-    renderWithRouter(<Consulting />);
-    const callButton = screen.getByText('Book a 30-min discovery call');
-    expect(callButton).toBeInTheDocument();
-    expect(callButton.closest('a')).toHaveAttribute('href', '/contact');
+    render(<Consulting />);
+    const links = screen.getAllByRole('link');
+    const found = links.some(link => within(link).queryByText(/book discovery call/i));
+    expect(found).toBe(true);
+  });
+
+  it('renders the final CTA section', () => {
+    render(<Consulting />);
+    expect(screen.getByText('Ready to Transform Your Business with AI?')).toBeInTheDocument();
+    const links = screen.getAllByRole('link');
+    const found = links.some(link => within(link).queryByText(/schedule your free discovery call/i));
+    expect(found).toBe(true);
   });
 }); 
