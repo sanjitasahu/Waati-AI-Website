@@ -1299,7 +1299,7 @@ const Home: React.FC = () => {
             mb: 6,
             fontSize: '1.1rem'
           }}>
-            ✉️ info@waatiaiconsulting.com | 📞 +91 XXX XXX XXXX
+            ✉️ <a href="mailto:sanjita.sahu@waatiai.com" style={{ color: 'white', textDecoration: 'none' }}>sanjita.sahu@waatiai.com</a> | 📞 <a href="https://wa.me/19053175009" target="_blank" rel="noopener noreferrer" style={{ color: 'white', textDecoration: 'none' }}>+1 905-317-5009</a>
           </Typography>
           <AnimatedButton
             variant="contained"

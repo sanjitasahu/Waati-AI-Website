@@ -223,7 +223,7 @@ const NorthEastIndia: React.FC = () => {
                 </Typography>
                 <Button
                   component="a"
-                  href={`mailto:hello@waati.ai?subject=AI for ${state.name}`}
+                  href={`mailto:sanjita.sahu@waatiai.com?subject=AI for ${state.name}`}
                   variant="text"
                   color="primary"
                 >
