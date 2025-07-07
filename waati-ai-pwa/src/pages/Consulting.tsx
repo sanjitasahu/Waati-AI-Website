@@ -12,14 +12,8 @@ import {
   IntegrationInstructions,
   Analytics,
   School,
-  Support,
-  TrendingUp,
-  Business,
-  Code,
-  CloudQueue,
   CheckCircle,
   ArrowForward,
-  AutoAwesome,
   Phone,
   Email
 } from '@mui/icons-material';
@@ -35,47 +29,7 @@ const fadeInUp = keyframes`
   }
 `;
 
-const blink = keyframes`
-  0%, 50% {
-    border-color: transparent;
-  }
-  51%, 100% {
-    border-color: #073B4C;
-  }
-`;
 
-const continuousTypewriter = keyframes`
-  0% {
-    width: 0;
-    opacity: 1;
-  }
-  45% {
-    width: 100%;
-    opacity: 1;
-  }
-  55% {
-    width: 100%;
-    opacity: 1;
-  }
-  100% {
-    width: 0;
-    opacity: 1;
-  }
-`;
-
-const StyledLink = styled(RouterLink)(({ theme }) => ({
-  color: 'inherit',
-  textDecoration: 'none',
-  borderBottom: '1px solid transparent',
-  transition: 'all 0.3s ease',
-  display: 'inline-flex',
-  alignItems: 'center',
-  gap: '4px',
-  '&:hover': {
-    borderColor: 'currentColor',
-    transform: 'translateX(4px)'
-  }
-}));
 
 const AnimatedButton = styled(Button)(({ theme }) => ({
   transition: 'all 0.3s ease',
@@ -86,11 +40,6 @@ const AnimatedButton = styled(Button)(({ theme }) => ({
 }));
 
 const Consulting: React.FC = () => {
-  const [openCard, setOpenCard] = useState<number | null>(null);
-
-  const handleCardClick = (index: number) => {
-    setOpenCard(openCard === index ? null : index);
-  };
 
   const services = [
     {
