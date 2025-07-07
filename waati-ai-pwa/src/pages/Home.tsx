@@ -13,7 +13,6 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
-import DownloadIcon from '@mui/icons-material/Download';
 
 const fadeInUp = keyframes`
   from {
