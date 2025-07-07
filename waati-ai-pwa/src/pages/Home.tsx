@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Container,
@@ -139,6 +139,59 @@ const AnimatedButton = styled(Button)(({ theme }) => ({
   }
 }));
 
+// Add styled component for the flip card
+const FlipCardWrapper = styled(Box)(({ theme }) => ({
+  perspective: '1200px',
+  width: '100%',
+  height: '100%',
+  minHeight: 350,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
+
+const FlipCard = styled(Box)(({ theme }) => ({
+  width: '100%',
+  height: '100%',
+  minHeight: 350,
+  position: 'relative',
+  transformStyle: 'preserve-3d',
+  transition: 'transform 1.2s cubic-bezier(.22,1,.36,1)',
+  borderRadius: 24,
+  boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
+  '&:hover': {
+    transform: 'rotateY(180deg)',
+  },
+}));
+
+const FlipCardFace = styled(Box)(({ theme }) => ({
+  position: 'absolute',
+  width: '100%',
+  height: '100%',
+  top: 0,
+  left: 0,
+  borderRadius: 24,
+  overflow: 'hidden',
+  backfaceVisibility: 'hidden',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  p: 4,
+}));
+
+const FlipCardBack = styled(FlipCardFace)(({ theme }) => ({
+  background: 'rgba(7, 59, 76, 0.97)',
+  color: 'white',
+  transform: 'rotateY(180deg)',
+  boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
+  textAlign: 'center',
+  padding: 32,
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+}));
+
 const Home: React.FC = () => {
   const stats = [
     { number: '1 Hour', label: 'Weekly AI Learning' },
@@ -186,6 +239,12 @@ const Home: React.FC = () => {
       rating: 5,
     },
   ];
+
+  const [openCard, setOpenCard] = useState<number | null>(null);
+
+  const handleCardClick = (index: number) => {
+    setOpenCard(openCard === index ? null : index);
+  };
 
   return (
     <Box>
@@ -569,191 +628,7 @@ const Home: React.FC = () => {
         </Container>
       </Box>
 
-      {/* Meet Our Founders Section */}
-      <Box sx={{ 
-        py: { xs: '60px', md: '80px' }, 
-        backgroundColor: '#ffffff',
-        position: 'relative'
-      }}>
-        <Container maxWidth="lg">
-          <Box sx={{ textAlign: 'center', mb: 8 }}>
-            <Typography variant="h2" component="h2" gutterBottom sx={{ 
-              fontWeight: 800,
-              color: '#073B4C',
-              fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
-              mb: 4
-            }}>
-              Meet Our Founders
-            </Typography>
-            <Typography variant="h5" sx={{ 
-              color: '#073B4C', 
-              fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.5rem' },
-              lineHeight: 1.6,
-              fontWeight: 400,
-              opacity: 0.8,
-              maxWidth: '800px',
-              mx: 'auto',
-              mb: 6
-            }}>
-              The passionate minds behind Waati AI Consulting, dedicated to bringing AI education to every student.
-            </Typography>
-          </Box>
-          
-          <Box sx={{ 
-            display: 'flex', 
-            flexDirection: { xs: 'column', lg: 'row' }, 
-            gap: 4,
-            justifyContent: 'center',
-            alignItems: 'stretch'
-          }}>
-            {/* Sanjita Card */}
-            <Box sx={{ flex: 1, maxWidth: '400px' }}>
-              <Box sx={{
-                p: 4,
-                borderRadius: '20px',
-                backgroundColor: '#F8F9FA',
-                border: '2px solid rgba(0, 128, 128, 0.1)',
-                transition: 'all 0.3s ease',
-                height: '100%',
-                textAlign: 'center',
-                '&:hover': {
-                  transform: 'translateY(-8px)',
-                  boxShadow: '0 16px 48px rgba(0, 128, 128, 0.2)',
-                  borderColor: '#008080',
-                }
-              }}>
-                <Box
-                  component="img"
-                  src="/sanjita-profile.jpg"
-                  alt="Sanjita Sahu"
-                  sx={{
-                    width: 120,
-                    height: 120,
-                    borderRadius: '50%',
-                    mb: 3,
-                    border: '4px solid #008080',
-                    objectFit: 'cover'
-                  }}
-                />
-                <Typography variant="h4" sx={{ 
-                  fontWeight: 700,
-                  color: '#073B4C',
-                  mb: 1
-                }}>
-                  Sanjita Sahu
-                </Typography>
-                <Typography variant="h6" sx={{ 
-                  color: '#008080',
-                  mb: 3,
-                  fontWeight: 600
-                }}>
-                  Co-Founder & AI Product Lead
-                </Typography>
-                <Typography variant="body1" sx={{ 
-                  color: '#073B4C',
-                  lineHeight: 1.6,
-                  mb: 3,
-                  opacity: 0.8
-                }}>
-                  Innovative AI Product Lead with expertise in AI-driven products, automation solutions, and scaling advanced AI systems.
-                </Typography>
-                <StyledLink to="/about#sanjita">
-                  <Button
-                    variant="outlined"
-                    size="medium"
-                    sx={{
-                      borderColor: '#008080',
-                      color: '#008080',
-                      transition: 'all 0.3s ease',
-                      '&:hover': {
-                        borderColor: '#006666',
-                        backgroundColor: 'rgba(0, 128, 128, 0.1)',
-                        transform: 'translateY(-2px)',
-                      }
-                    }}
-                  >
-                    Learn More
-                  </Button>
-                </StyledLink>
-              </Box>
-            </Box>
-
-            {/* Sourav Card */}
-            <Box sx={{ flex: 1, maxWidth: '400px' }}>
-              <Box sx={{
-                p: 4,
-                borderRadius: '20px',
-                backgroundColor: '#F8F9FA',
-                border: '2px solid rgba(255, 107, 107, 0.1)',
-                transition: 'all 0.3s ease',
-                height: '100%',
-                textAlign: 'center',
-                '&:hover': {
-                  transform: 'translateY(-8px)',
-                  boxShadow: '0 16px 48px rgba(255, 107, 107, 0.2)',
-                  borderColor: '#FF6B6B',
-                }
-              }}>
-                <Box
-                  component="img"
-                  src="/sourav-profile.jpg"
-                  alt="Sourav Sahu"
-                  sx={{
-                    width: 120,
-                    height: 120,
-                    borderRadius: '50%',
-                    mb: 3,
-                    border: '4px solid #FF6B6B',
-                    objectFit: 'cover'
-                  }}
-                />
-                <Typography variant="h4" sx={{ 
-                  fontWeight: 700,
-                  color: '#073B4C',
-                  mb: 1
-                }}>
-                  Sourav Sahu
-                </Typography>
-                <Typography variant="h6" sx={{ 
-                  color: '#FF6B6B',
-                  mb: 3,
-                  fontWeight: 600
-                }}>
-                  Co-Founder & Business Lead
-                </Typography>
-                <Typography variant="body1" sx={{ 
-                  color: '#073B4C',
-                  lineHeight: 1.6,
-                  mb: 3,
-                  opacity: 0.8
-                }}>
-                  Strategic business leader specializing in AI/ML SaaS, business transformation, and customer experience enhancement.
-                </Typography>
-                <StyledLink to="/about#sourav">
-                  <Button
-                    variant="outlined"
-                    size="medium"
-                    sx={{
-                      borderColor: '#FF6B6B',
-                      color: '#FF6B6B',
-                      transition: 'all 0.3s ease',
-                      '&:hover': {
-                        borderColor: '#e55a5a',
-                        backgroundColor: 'rgba(255, 107, 107, 0.1)',
-                        transform: 'translateY(-2px)',
-                      }
-                    }}
-                  >
-                    Learn More
-                  </Button>
-                </StyledLink>
-              </Box>
-            </Box>
-          </Box>
-        </Container>
-      </Box>
-
-      {/* Welcome Section */}
+      {/* Welcome to the Future of Learning Section (moved here) */}
       <Box sx={{ 
         py: { xs: '60px', md: '80px' }, 
         background: 'url("/future-of-learning.jpg") center center / cover no-repeat',
@@ -810,7 +685,7 @@ const Home: React.FC = () => {
         </Container>
       </Box>
 
-      {/* Challenge Section */}
+      {/* The Challenge Section (updated) */}
       <Box sx={{ 
         py: { xs: '60px', md: '80px' }, 
         backgroundColor: '#F8F9FA'
@@ -835,9 +710,8 @@ const Home: React.FC = () => {
               mx: 'auto',
               mb: 6
             }}>
-              Traditional curricula move too slowly to keep pace with a rapidly evolving, technology-driven world. Students are often:
+              By 2030, artificial intelligence will reshape 38 million jobs across India, yet fewer than half of today's graduates meet industry skill standards. Unless schools in the North-East pivot fast, an entire generation risks being locked out of tomorrow's opportunities.
             </Typography>
-            
             <Box sx={{ 
               display: 'grid', 
               gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' }, 
@@ -845,91 +719,219 @@ const Home: React.FC = () => {
               maxWidth: '1200px', 
               mx: 'auto'
             }}>
-              {[
-                {
-                  title: 'Ethical & Technical Gaps',
-                  description: 'Unprepared for the ethical and technical complexities of AI',
-                  image: '/Ethical.jpg',
-                  blogUrl: '/blog'
-                },
-                {
-                  title: 'Disconnected Learning',
-                  description: 'Demotivated by one-size-fits-all lessons that feel disconnected from real life',
-                  image: '/disconnected-learning.png',
-                  blogUrl: '/blog'
-                },
-                {
-                  title: 'Future Skills Gap',
-                  description: 'Unequipped to solve tomorrow\'s problems with tomorrow\'s tools',
-                  image: '/future-skill-gap.png',
-                  blogUrl: '/blog'
-                }
-              ].map((challenge, index) => (
-                <Box 
-                  key={index}
-                  component={RouterLink}
-                  to={challenge.blogUrl}
-                  sx={{ 
-                    background: `url("${challenge.image}") center center / cover no-repeat`,
-                    borderRadius: '20px',
-                    p: 4,
-                    textAlign: 'center',
-                    minHeight: '350px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'flex-end',
-                    position: 'relative',
-                    boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
-                    overflow: 'hidden',
-                    animation: `${cardSlideIn} 1s ease-out ${index * 0.3}s both, ${cardFloat} 3s ease-in-out ${index * 0.3 + 1.5}s infinite`,
-                    transition: 'all 0.4s ease',
-                    textDecoration: 'none',
-                    cursor: 'pointer',
-                    '&::before': {
-                      content: '""',
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background: 'linear-gradient(to top, rgba(7, 59, 76, 0.8), rgba(7, 59, 76, 0.3))',
-                      zIndex: 1
-                    },
-                    '&:hover': {
-                      transform: 'translateY(-12px) scale(1.05)',
-                      boxShadow: '0 25px 70px rgba(0, 0, 0, 0.3)',
-                      animation: `${cardPulse} 0.6s ease-in-out`,
-                      '&::before': {
-                        background: 'linear-gradient(to top, rgba(7, 59, 76, 0.9), rgba(7, 59, 76, 0.4))'
-                      }
-                    }
-                  }}
-                >
-                  <Box sx={{ 
-                    position: 'relative', 
-                    zIndex: 2,
-                    animation: `${textReveal} 0.8s ease-out ${index * 0.3 + 0.6}s both`
-                  }}>
-                    <Typography variant="h6" sx={{ 
-                      fontWeight: 700,
-                      color: 'white',
+              {/* Card 1 */}
+              <Box
+                onClick={() => handleCardClick(0)}
+                sx={{
+                  background: 'url("/AI-literacy-crisis.jpg") center center / cover no-repeat',
+                  backgroundSize: 'cover',
+                  backgroundColor: '#073B4C',
+                  borderRadius: 24,
+                  boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
+                  minHeight: 350,
+                  position: 'relative',
+                  cursor: 'pointer',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textAlign: 'center',
+                  transition: 'box-shadow 0.3s',
+                  '&:hover': {
+                    boxShadow: '0 25px 70px rgba(0, 0, 0, 0.3)',
+                  },
+                }}
+              >
+                <Box sx={{ position: 'relative', zIndex: 2 }}>
+                  <Box
+                    sx={{
+                      display: 'inline-block',
+                      background: 'rgba(7,59,76,0.7)',
+                      backdropFilter: 'blur(4px)',
+                      px: 2,
+                      py: 0.5,
+                      borderRadius: 12,
                       mb: 2,
-                      fontSize: '1.4rem',
-                      textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
-                    }}>
-                      {challenge.title}
-                    </Typography>
-                    <Typography variant="body1" sx={{ 
-                      fontSize: '1rem', 
-                      lineHeight: 1.6,
-                      color: 'white',
-                      textShadow: '1px 1px 2px rgba(0,0,0,0.5)'
-                    }}>
-                      {challenge.description}
+                    }}
+                  >
+                    <Typography variant="h5" sx={{ fontWeight: 800, color: 'white', textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}>
+                      AI Literacy Crisis
                     </Typography>
                   </Box>
                 </Box>
-              ))}
+                {/* Slide-up overlay */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    height: openCard === 0 ? '100%' : '0',
+                    background: 'rgba(7, 59, 76, 0.85)',
+                    backdropFilter: openCard === 0 ? 'blur(8px)' : 'none',
+                    color: 'white',
+                    borderRadius: 24,
+                    boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
+                    textAlign: 'center',
+                    px: 5,
+                    py: openCard === 0 ? 7 : 0,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    overflow: 'hidden',
+                    transition: 'height 0.5s cubic-bezier(.22,1,.36,1), padding 0.5s cubic-bezier(.22,1,.36,1)',
+                    zIndex: 3,
+                  }}
+                >
+                  {openCard === 0 && (
+                    <Typography variant="body2" sx={{ fontSize: '1.1rem', lineHeight: 1.7, color: 'white', fontWeight: 700, textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}>
+                      Students leave school having never trained a model or parsed a dataset—while 38 million roles are being rewritten around AI fluency.
+                    </Typography>
+                  )}
+                </Box>
+              </Box>
+              {/* Card 2 */}
+              <Box
+                onClick={() => handleCardClick(1)}
+                sx={{
+                  background: 'url("/Lost-earning-power.jpeg") center center / cover no-repeat',
+                  backgroundSize: 'cover',
+                  backgroundColor: '#073B4C',
+                  borderRadius: 24,
+                  boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
+                  minHeight: 350,
+                  position: 'relative',
+                  cursor: 'pointer',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textAlign: 'center',
+                  transition: 'box-shadow 0.3s',
+                  '&:hover': {
+                    boxShadow: '0 25px 70px rgba(0, 0, 0, 0.3)',
+                  },
+                }}
+              >
+                <Box sx={{ position: 'relative', zIndex: 2 }}>
+                  <Box
+                    sx={{
+                      display: 'inline-block',
+                      background: 'rgba(7,59,76,0.7)',
+                      backdropFilter: 'blur(4px)',
+                      px: 2,
+                      py: 0.5,
+                      borderRadius: 12,
+                      mb: 2,
+                    }}
+                  >
+                    <Typography variant="h5" sx={{ fontWeight: 800, color: 'white', textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}>
+                      Lost Earning Power
+                    </Typography>
+                  </Box>
+                </Box>
+                {/* Slide-up overlay */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    height: openCard === 1 ? '100%' : '0',
+                    background: 'rgba(7, 59, 76, 0.85)',
+                    backdropFilter: openCard === 1 ? 'blur(8px)' : 'none',
+                    color: 'white',
+                    borderRadius: 24,
+                    boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
+                    textAlign: 'center',
+                    px: 5,
+                    py: openCard === 1 ? 7 : 0,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    overflow: 'hidden',
+                    transition: 'height 0.5s cubic-bezier(.22,1,.36,1), padding 0.5s cubic-bezier(.22,1,.36,1)',
+                    zIndex: 3,
+                  }}
+                >
+                  {openCard === 1 && (
+                    <Typography variant="body2" sx={{ fontSize: '1.1rem', lineHeight: 1.7, color: 'white', fontWeight: 700, textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}>
+                      Jobs that ask for AI skills pay up to 23 % more, but only 45 % of new grads qualify—shutting them out of life-changing income.
+                    </Typography>
+                  )}
+                </Box>
+              </Box>
+              {/* Card 3 */}
+              <Box
+                onClick={() => handleCardClick(2)}
+                sx={{
+                  background: 'url("/Ethics-and-trust-deficiet.jpg") center center / cover no-repeat',
+                  backgroundSize: 'cover',
+                  backgroundColor: '#073B4C',
+                  borderRadius: 24,
+                  boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
+                  minHeight: 350,
+                  position: 'relative',
+                  cursor: 'pointer',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  textAlign: 'center',
+                  transition: 'box-shadow 0.3s',
+                  '&:hover': {
+                    boxShadow: '0 25px 70px rgba(0, 0, 0, 0.3)',
+                  },
+                }}
+              >
+                <Box sx={{ position: 'relative', zIndex: 2 }}>
+                  <Box
+                    sx={{
+                      display: 'inline-block',
+                      background: 'rgba(7,59,76,0.7)',
+                      backdropFilter: 'blur(4px)',
+                      px: 2,
+                      py: 0.5,
+                      borderRadius: 12,
+                      mb: 2,
+                    }}
+                  >
+                    <Typography variant="h5" sx={{ fontWeight: 800, color: 'white', textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}>
+                      Ethics & Trust Deficit
+                    </Typography>
+                  </Box>
+                </Box>
+                {/* Slide-up overlay */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    height: openCard === 2 ? '100%' : '0',
+                    background: 'rgba(7, 59, 76, 0.85)',
+                    backdropFilter: openCard === 2 ? 'blur(8px)' : 'none',
+                    color: 'white',
+                    borderRadius: 24,
+                    boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
+                    textAlign: 'center',
+                    px: 5,
+                    py: openCard === 2 ? 7 : 0,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    overflow: 'hidden',
+                    transition: 'height 0.5s cubic-bezier(.22,1,.36,1), padding 0.5s cubic-bezier(.22,1,.36,1)',
+                    zIndex: 3,
+                  }}
+                >
+                  {openCard === 2 && (
+                    <Typography variant="body2" sx={{ fontSize: '1.1rem', lineHeight: 1.7, color: 'white', fontWeight: 700, textShadow: '0 2px 8px rgba(0,0,0,0.7)' }}>
+                      With little exposure to bias, privacy or safety frameworks, future builders risk unleashing harmful systems on the very communities they aim to serve—something 97 % of Indian executives call a top concern.
+                    </Typography>
+                  )}
+                </Box>
+              </Box>
             </Box>
           </Box>
         </Container>
@@ -1098,66 +1100,144 @@ const Home: React.FC = () => {
         </Container>
       </Box>
 
-      {/* Success Metrics Section */}
-      <Box sx={{ 
-        py: { xs: '60px', md: '80px' }, 
-        backgroundColor: '#F8F9FA'
+      {/* Meet Our Founders Section (moved here) */}
+      <Box sx={{
+        py: { xs: '60px', md: '80px' },
+        backgroundColor: '#ffffff',
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
       }}>
         <Container maxWidth="lg">
-          <Box sx={{ textAlign: 'center', mb: 8 }}>
-            <Typography variant="h2" component="h2" gutterBottom sx={{ 
-              fontWeight: 800,
-              color: '#073B4C',
-              fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
-              mb: 4
-            }}>
-              Success Metrics
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: { xs: 'column', md: 'row' },
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: '#f5f8ff',
+              borderRadius: '32px',
+              boxShadow: '0 4px 24px rgba(7,59,76,0.08)',
+              p: { xs: 2, md: 4 },
+              mb: 6,
+              gap: { xs: 4, md: 0 },
+            }}
+          >
+            {/* Founders Photo */}
+            <Box
+              sx={{
+                flex: 1,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                minWidth: 0,
+                mb: { xs: 3, md: 0 },
+              }}
+            >
+              <Box
+                component="img"
+                src="/Sourav-sanjita_homepage.jpeg"
+                alt="Sourav and Sanjita, Waati AI Founders"
+                sx={{
+                  width: { xs: '100%', md: 340 },
+                  height: { xs: 220, md: 340 },
+                  objectFit: 'cover',
+                  borderRadius: '24px',
+                  boxShadow: '0 2px 12px rgba(0,0,0,0.10)',
+                  background: '#e6eaf0',
+                }}
+              />
+            </Box>
+            {/* Quote Block */}
+            <Box
+              sx={{
+                flex: 2,
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                p: { xs: 2, md: 4 },
+                minWidth: 0,
+              }}
+            >
+              <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
+                <Box
+                  component="span"
+                  sx={{
+                    color: '#2563eb',
+                    fontSize: 48,
+                    mr: 1,
+                  }}
+                >
+                  "
+                </Box>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    fontWeight: 700,
+                    fontSize: { xs: '1.5rem', md: '2.2rem' },
+                    color: '#073B4C',
+                    lineHeight: 1.2,
+                  }}
+                >
+                  Our mission is to empower every student in the North East to thrive in an AI-driven world.
+                </Typography>
+              </Box>
+              <Typography
+                variant="subtitle1"
+                sx={{
+                  color: '#2563eb',
+                  fontWeight: 600,
+                  fontSize: '1.1rem',
+                  mt: 2,
+                }}
+              >
+                — Sourav & Sanjita, Founders
+              </Typography>
+            </Box>
+          </Box>
+
+          {/* Video Section */}
+          <Box sx={{ width: '100%', textAlign: 'center', mb: 6 }}>
+            <video
+              src="/Why waatiAI sample video.mp4"
+              controls
+              style={{
+                width: '100%',
+                maxWidth: 600,
+                borderRadius: 16,
+                boxShadow: '0 2px 12px rgba(0,0,0,0.10)',
+                background: '#e6eaf0',
+              }}
+            />
+            <Typography
+              variant="subtitle1"
+              sx={{ mt: 2, color: '#073B4C', fontWeight: 600 }}
+            >
+              Hear from Sourav & Sanjita
             </Typography>
           </Box>
-          
-          <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 6, justifyContent: 'center' }}>
-            {testimonials.map((testimonial, index) => (
-              <Box key={index} sx={{ flex: { xs: '1 1 100%', md: '1 1 45%' }, maxWidth: '600px' }}>
-                <Box sx={{
-                  p: 4,
-                  borderRadius: '20px',
-                  backgroundColor: 'white',
-                  boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-                  transition: 'all 0.3s ease',
-                  height: '100%',
-                  border: '1px solid rgba(0, 128, 128, 0.1)',
-                  '&:hover': {
-                    transform: 'translateY(-8px)',
-                    boxShadow: '0 12px 40px rgba(0,0,0,0.15)',
-                    borderColor: '#008080'
-                  }
-                }}>
-                  <Box sx={{ display: 'flex', mb: 3, justifyContent: 'center' }}>
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <StarIcon key={i} sx={{ color: '#FFD166', fontSize: 28 }} />
-                    ))}
-                  </Box>
-                  <Typography variant="body1" sx={{ 
-                    mb: 4, 
-                    fontStyle: 'italic',
-                    fontSize: '1.2rem',
-                    lineHeight: 1.7,
-                    textAlign: 'center',
-                    color: '#073B4C'
-                  }}>
-                    "{testimonial.content}"
-                  </Typography>
-                  <Typography variant="subtitle1" sx={{ 
-                    fontWeight: 700, 
-                    color: '#008080',
-                    fontSize: '1.1rem',
-                    textAlign: 'center'
-                  }}>
-                    — {testimonial.name}
-                  </Typography>
-                </Box>
-              </Box>
-            ))}
+
+          {/* Why North East India Matters Section */}
+          <Box
+            sx={{
+              background: 'linear-gradient(90deg, #008080 0%, #2563eb 100%)',
+              color: 'white',
+              borderRadius: 4,
+              p: { xs: 3, md: 5 },
+              textAlign: 'center',
+              maxWidth: 900,
+              mx: 'auto',
+              boxShadow: '0 2px 12px rgba(0,0,0,0.10)',
+            }}
+          >
+            <Typography variant="h3" sx={{ fontWeight: 800, mb: 2 }}>
+              Why North East India Matters
+            </Typography>
+            <Typography variant="h6" sx={{ fontWeight: 400, opacity: 0.95 }}>
+              The North East is home to vibrant, creative, and ambitious youth. At Waati AI, we believe that talent is everywhere, but opportunity must reach everywhere too. Our mission is to make North East India a model for inclusive, impactful AI learning—empowering the next generation of changemakers, innovators, and responsible tech thinkers.
+            </Typography>
           </Box>
         </Container>
       </Box>
