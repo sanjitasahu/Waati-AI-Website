@@ -9,22 +9,16 @@ import {
   Tab,
   Button,
   Chip,
-  Divider,
   List,
   ListItem,
   ListItemIcon,
   ListItemText,
-  Stack,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  IconButton
+  Stack
 } from '@mui/material';
 import { 
   School as SchoolIcon,
   Business as BusinessIcon,
   TrendingUp as TrendingUpIcon,
-  CheckCircle as CheckCircleIcon,
   ArrowForward as ArrowForwardIcon,
   Work as WorkIcon,
   Psychology as PsychologyIcon,
@@ -32,7 +26,7 @@ import {
   Computer as ComputerIcon
 } from '@mui/icons-material';
 import { useLocation } from 'react-router-dom';
-import CloseIcon from '@mui/icons-material/Close';
+
 import ProgramModal from '../components/ProgramModal';
 
 interface TabPanelProps {

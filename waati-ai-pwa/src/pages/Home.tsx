@@ -10,7 +10,7 @@ import { styled, keyframes } from '@mui/material/styles';
 import SchoolIcon from '@mui/icons-material/School';
 import BusinessIcon from '@mui/icons-material/Business';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
-import StarIcon from '@mui/icons-material/Star';
+
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import DownloadIcon from '@mui/icons-material/Download';
@@ -74,47 +74,7 @@ const fadeInLoop = keyframes`
   }
 `;
 
-const cardSlideIn = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(80px) scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-`;
 
-const textReveal = keyframes`
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
-
-const cardFloat = keyframes`
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-`;
-
-const cardPulse = keyframes`
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  }
-  50% {
-    transform: scale(1.02);
-    box-shadow: 0 16px 50px rgba(255, 107, 107, 0.25);
-  }
-`;
 
 
 const StyledLink = styled(RouterLink)(({ theme }) => ({
@@ -139,58 +99,7 @@ const AnimatedButton = styled(Button)(({ theme }) => ({
   }
 }));
 
-// Add styled component for the flip card
-const FlipCardWrapper = styled(Box)(({ theme }) => ({
-  perspective: '1200px',
-  width: '100%',
-  height: '100%',
-  minHeight: 350,
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
 
-const FlipCard = styled(Box)(({ theme }) => ({
-  width: '100%',
-  height: '100%',
-  minHeight: 350,
-  position: 'relative',
-  transformStyle: 'preserve-3d',
-  transition: 'transform 1.2s cubic-bezier(.22,1,.36,1)',
-  borderRadius: 24,
-  boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
-  '&:hover': {
-    transform: 'rotateY(180deg)',
-  },
-}));
-
-const FlipCardFace = styled(Box)(({ theme }) => ({
-  position: 'absolute',
-  width: '100%',
-  height: '100%',
-  top: 0,
-  left: 0,
-  borderRadius: 24,
-  overflow: 'hidden',
-  backfaceVisibility: 'hidden',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  p: 4,
-}));
-
-const FlipCardBack = styled(FlipCardFace)(({ theme }) => ({
-  background: 'rgba(7, 59, 76, 0.97)',
-  color: 'white',
-  transform: 'rotateY(180deg)',
-  boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)',
-  textAlign: 'center',
-  padding: 32,
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-}));
 
 const Home: React.FC = () => {
   const stats = [
@@ -227,18 +136,7 @@ const Home: React.FC = () => {
     },
   ];
 
-  const testimonials = [
-    {
-      name: 'Principal, Sunrise International Academy',
-      content: 'In just three months, our Grade 9 class went from zero coding experience to deploying a live chatbot for our school website.',
-      rating: 5,
-    },
-    {
-      name: 'Head of Computer Science, Red Oak High',
-      content: 'Waati AI\'s model doubled our students\' engagement in STEM, and two teams advanced to national science fairs.',
-      rating: 5,
-    },
-  ];
+
 
   const [openCard, setOpenCard] = useState<number | null>(null);
 
