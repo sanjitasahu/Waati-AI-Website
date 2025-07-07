@@ -24,7 +24,7 @@ export default function ProgramModal({ open, onClose, program }: ProgramModalPro
         {/* Hero strip */}
         <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
           <Typography variant="subtitle1">4 live sessions · ₹5,000</Typography>
-          <Button variant="contained" size="small">Enroll Now</Button>
+          <Button variant="contained" size="small" component="a" href="/enroll?program=workshops">Enroll Now</Button>
         </Stack>
 
         {/* Course Snapshot */}
@@ -99,7 +99,7 @@ export default function ProgramModal({ open, onClose, program }: ProgramModalPro
       </DialogContent>
 
       <DialogActions>
-        <Button variant="contained">Enroll Now</Button>
+        <Button variant="contained" component="a" href="/enroll?program=workshops">Enroll Now</Button>
         <Button onClick={onClose}>Close</Button>
       </DialogActions>
     </Dialog>

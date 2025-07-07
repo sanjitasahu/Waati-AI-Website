@@ -18,6 +18,7 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import NorthEastIndia from './pages/NorthEastIndia';
+import Enroll from './pages/Enroll';
 
 const theme = createTheme({
   palette: {
@@ -105,6 +106,7 @@ const App: React.FC = () => {
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/north-east-india" element={<NorthEastIndia />} />
+                  <Route path="/enroll" element={<Enroll />} />
                 </Routes>
               </main>
               <Footer />

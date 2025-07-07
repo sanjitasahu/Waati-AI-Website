@@ -368,7 +368,7 @@ const Home: React.FC = () => {
                 <AnimatedButton
                   variant="outlined"
                   size="large"
-                  href="/programs"
+                  href="/enroll"
                   sx={{
                     borderColor: '#073B4C',
                     borderWidth: '2px',

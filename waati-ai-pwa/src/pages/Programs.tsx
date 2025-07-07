@@ -219,6 +219,8 @@ const Programs: React.FC = () => {
                       fullWidth={true}
                       size="large"
                       endIcon={<ArrowForwardIcon />}
+                      component="a"
+                      href="/enroll?program=workshops"
                       sx={{
                         backgroundColor: '#008080',
                         color: 'white',
@@ -288,6 +290,8 @@ const Programs: React.FC = () => {
                       fullWidth={true}
                       size="large"
                       endIcon={<ArrowForwardIcon />}
+                      component="a"
+                      href="/enroll?program=bootcamps"
                       sx={{
                         backgroundColor: '#008080',
                         color: 'white',
@@ -357,6 +361,8 @@ const Programs: React.FC = () => {
                       fullWidth={true}
                       size="large"
                       endIcon={<ArrowForwardIcon />}
+                      component="a"
+                      href="/enroll?program=labs"
                       sx={{
                         backgroundColor: '#008080',
                         color: 'white',
@@ -721,6 +727,8 @@ const Programs: React.FC = () => {
                 variant="contained"
                 size="large"
                 endIcon={<ArrowForwardIcon />}
+                component="a"
+                href="/enroll"
                 sx={{
                   backgroundColor: 'white',
                   color: '#008080',
