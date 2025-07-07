@@ -963,38 +963,6 @@ const Home: React.FC = () => {
               </Box>
             ))}
           </Box>
-          
-          <Box sx={{ textAlign: 'center', mt: 8 }}>
-            <Typography variant="body1" sx={{ 
-              fontSize: '1.1rem', 
-              fontWeight: 600, 
-              color: '#073B4C',
-              mb: 2
-            }}>
-              4. Teacher Academy: Equip your faculty with turnkey lesson plans, in-class coaching, and ongoing support so AI stays in the syllabus year after year.
-            </Typography>
-            <AnimatedButton
-              variant="contained"
-              size="large"
-              startIcon={<DownloadIcon />}
-              sx={{
-                backgroundColor: '#008080',
-                color: 'white',
-                px: 4,
-                py: 2,
-                borderRadius: '50px',
-                textTransform: 'none',
-                fontSize: '1.1rem',
-                fontWeight: 600,
-                '&:hover': { 
-                  backgroundColor: '#006666',
-                  transform: 'translateY(-2px)'
-                },
-              }}
-            >
-              Download Full Curriculum Guide (PDF)
-            </AnimatedButton>
-          </Box>
         </Container>
       </Box>
 
