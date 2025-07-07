@@ -16,6 +16,7 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 const Navbar: React.FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -114,18 +115,15 @@ const Navbar: React.FC = () => {
               alignItems: 'center',
             }}
           >
-            <Typography
-              variant="h4"
-              sx={{
-                fontFamily: '"Bradley Hand", "Brush Script MT", cursive',
-                fontWeight: 700,
-                color: 'white',
-                fontSize: { xs: '1.5rem', md: '2rem' },
-                letterSpacing: '0.5px'
+            <Logo 
+              variant="v1" 
+              size="medium" 
+              alt="Waati AI - Home"
+              sx={{ 
+                filter: 'brightness(0) invert(1)', // Make logo white for dark navbar
+                maxHeight: { xs: 40, md: 50 }
               }}
-            >
-              WAATI AI
-            </Typography>
+            />
           </Box>
 
           {isMobile ? (

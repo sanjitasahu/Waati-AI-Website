@@ -172,7 +172,7 @@ const NorthEastIndia: React.FC = () => {
               >
                 <Box
                   component="img"
-                  src="/WAATI_AI_learning_logo.png"
+                  src="/Logo v2 medium.png"
                   alt="Waati AI Learning"
                   sx={{
                     width: 300,
