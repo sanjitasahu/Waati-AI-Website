@@ -5,7 +5,6 @@ import {
   Typography,
   Button,
 } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';
 import { styled, keyframes } from '@mui/material/styles';
 import SchoolIcon from '@mui/icons-material/School';
 import BusinessIcon from '@mui/icons-material/Business';
@@ -75,20 +74,6 @@ const fadeInLoop = keyframes`
 
 
 
-
-const StyledLink = styled(RouterLink)(({ theme }) => ({
-  color: 'inherit',
-  textDecoration: 'none',
-  borderBottom: '1px solid transparent',
-  transition: 'all 0.3s ease',
-  display: 'inline-flex',
-  alignItems: 'center',
-  gap: '4px',
-  '&:hover': {
-    borderColor: 'currentColor',
-    transform: 'translateX(4px)'
-  }
-}));
 
 const AnimatedButton = styled(Button)(({ theme }) => ({
   transition: 'all 0.3s ease',
@@ -310,8 +295,8 @@ const Home: React.FC = () => {
               maxWidth: '500px'
             }}>
               <Box 
-                component={RouterLink}
-                to="/programs#students"
+                component="a"
+                href="/programs#students"
                 sx={{
                   backgroundImage: 'url("/Students.jpg")',
                   backgroundSize: 'cover',
@@ -385,8 +370,8 @@ const Home: React.FC = () => {
               maxWidth: '500px'
             }}>
               <Box 
-                component={RouterLink}
-                to="/programs#parents"
+                component="a"
+                href="/programs#parents"
                 sx={{
                   backgroundImage: 'url("/parents.jpg")',
                   backgroundSize: 'cover',
