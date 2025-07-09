@@ -113,17 +113,48 @@ const Navbar: React.FC = () => {
               textDecoration: 'none',
               display: 'flex',
               alignItems: 'center',
+              gap: { xs: 1, md: 2 },
             }}
           >
-            <Logo 
-              variant="v1" 
-              size="medium" 
-              alt="Waati AI - Home"
-              sx={{ 
-                filter: 'brightness(0) invert(1)', // Make logo white for dark navbar
-                maxHeight: { xs: 40, md: 50 }
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: { xs: 36, md: 48 },
+                width: { xs: 36, md: 48 },
+                mr: { xs: 1, md: 2 },
               }}
-            />
+            >
+              <Logo
+                variant="v1"
+                size="small"
+                alt="Waati AI Logo"
+                sx={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                  display: 'block',
+                }}
+              />
+            </Box>
+            <Typography
+              variant="h4"
+              sx={{
+                fontFamily: '"Bradley Hand", "Brush Script MT", cursive',
+                fontWeight: 700,
+                color: 'white',
+                fontSize: { xs: '1.3rem', md: '2rem' },
+                letterSpacing: '0.5px',
+                lineHeight: 1,
+                '@media (max-width:600px)': {
+                  fontSize: '1.1rem',
+                },
+              }}
+            >
+              WAATI AI
+            </Typography>
           </Box>
 
           {isMobile ? (

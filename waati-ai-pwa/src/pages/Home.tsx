@@ -864,103 +864,141 @@ const Home: React.FC = () => {
           </Box>
           
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 6, justifyContent: 'center' }}>
-            {programs.map((program, index) => (
-              <Box key={index} sx={{ flex: { xs: '1 1 100%', sm: '1 1 45%', md: '1 1 30%' }, maxWidth: '400px' }}>
-                <Box sx={{
-                  p: { xs: 3, md: 4 },
-                  borderRadius: '20px',
-                  backgroundColor: 'white',
-                  boxShadow: '0 6px 24px rgba(0, 128, 128, 0.1)',
-                  transition: 'all 0.3s ease',
-                  height: '100%',
-                  border: '1px solid rgba(0, 128, 128, 0.1)',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  '&::before': {
-                    content: '""',
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    height: '4px',
-                    background: `linear-gradient(90deg, #008080 ${index * 33}%, #FFD166 ${index * 33 + 33}%, #FF6B6B ${index * 33 + 66}%)`,
-                  },
-                  '&:hover': {
-                    transform: 'translateY(-8px)',
-                    boxShadow: '0 12px 36px rgba(0, 128, 128, 0.18)',
-                    borderColor: '#008080',
-                  }
-                }}>
-                  <Box sx={{ 
-                    width: { xs: 60, md: 70 },
-                    height: { xs: 60, md: 70 },
-                    borderRadius: '16px',
-                    background: 'linear-gradient(135deg, #008080 0%, #FF6B6B 100%)',
+            {programs.map((program, index) => {
+              // Define subtitle and chips for each program
+              let subtitle = '';
+              let chips: string[] = [];
+              if (index === 0) {
+                subtitle = 'Play · Train · Explore';
+                chips = ['No-Code', 'Live'];
+              } else if (index === 1) {
+                subtitle = 'Build Real AI Projects';
+                chips = ['Project-Based', 'Live'];
+              } else if (index === 2) {
+                subtitle = 'Prototype & Showcase';
+                chips = ['Capstone', 'Live'];
+              }
+              return (
+                <Box key={index} sx={{ flex: { xs: '1 1 100%', sm: '1 1 45%', md: '1 1 30%' }, maxWidth: '400px' }}>
+                  <Box sx={{
+                    p: { xs: 3, md: 4 },
+                    borderRadius: '20px',
+                    backgroundColor: 'white',
+                    boxShadow: '0 6px 24px rgba(0, 128, 128, 0.1)',
+                    transition: 'all 0.3s ease',
+                    height: '100%',
+                    border: '1px solid rgba(0, 128, 128, 0.1)',
+                    position: 'relative',
+                    overflow: 'hidden',
                     display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    mb: 3,
-                    color: 'white'
-                  }}>
-                    {program.icon}
-                  </Box>
-                  <Typography variant="h4" component="h3" gutterBottom sx={{ 
-                    fontWeight: 700,
-                    color: '#073B4C',
-                    mb: 1,
-                    fontSize: { xs: '1.4rem', md: '1.6rem' }
-                  }}>
-                    {program.title}
-                  </Typography>
-                  <Typography variant="subtitle1" sx={{ 
-                    color: '#008080',
-                    fontWeight: 600,
-                    mb: 2,
-                    fontSize: { xs: '1rem', md: '1.1rem' }
-                  }}>
-                    {program.subtitle}
-                  </Typography>
-                  <Typography variant="body1" sx={{ 
-                    color: '#073B4C', 
-                    mb: 3, 
-                    lineHeight: 1.6,
-                    fontSize: { xs: '0.95rem', md: '1rem' },
-                    opacity: 0.8,
-                    flexGrow: 1
-                  }}>
-                    {program.description}
-                  </Typography>
-                  <Box sx={{ mb: 3 }}>
-                    {program.highlights.map((highlight, idx) => (
-                      <Box key={idx} sx={{ display: 'flex', alignItems: 'center', mb: 1.5 }}>
-                        <CheckCircleIcon sx={{ color: '#008080', fontSize: 18, mr: 1.5, flexShrink: 0 }} />
-                        <Typography variant="body2" sx={{ 
-                          color: '#073B4C', 
-                          fontWeight: 500,
-                          fontSize: '0.9rem',
-                          lineHeight: 1.4
-                        }}>
-                          {highlight}
-                        </Typography>
-                      </Box>
-                    ))}
-                  </Box>
-                  <StyledLink to={program.link} sx={{ 
-                    color: '#008080', 
-                    fontWeight: 600,
-                    fontSize: '1rem',
-                    alignSelf: 'flex-start',
+                    flexDirection: 'column',
+                    '&::before': {
+                      content: '""',
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: '4px',
+                      background: `linear-gradient(90deg, #008080 ${index * 33}%, #FFD166 ${index * 33 + 33}%, #FF6B6B ${index * 33 + 66}%)`,
+                    },
                     '&:hover': {
-                      color: '#006666'
+                      transform: 'translateY(-8px)',
+                      boxShadow: '0 12px 36px rgba(0, 128, 128, 0.18)',
+                      borderColor: '#008080',
                     }
                   }}>
-                    Learn more <ArrowForwardIcon sx={{ fontSize: 16, ml: 0.5 }} />
-                  </StyledLink>
+                    <Box sx={{ 
+                      width: { xs: 60, md: 70 },
+                      height: { xs: 60, md: 70 },
+                      borderRadius: '16px',
+                      background: 'linear-gradient(135deg, #008080 0%, #FF6B6B 100%)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      mb: 3,
+                      color: 'white'
+                    }}>
+                      {program.icon}
+                    </Box>
+                    <Typography variant="h4" component="h3" gutterBottom sx={{ 
+                      fontWeight: 700,
+                      color: '#073B4C',
+                      mb: 1,
+                      fontSize: { xs: '1.4rem', md: '1.6rem' }
+                    }}>
+                      {program.title}
+                    </Typography>
+                    <Typography variant="subtitle2" sx={{ mb: 2, fontStyle: 'italic', color: '#008080', fontWeight: 600 }}>
+                      {subtitle}
+                    </Typography>
+                    <Box sx={{ display: 'flex', gap: 1, mb: 2 }}>
+                      {chips.map((chip) => (
+                        <Box key={chip} sx={{
+                          background: '#F8F9FA',
+                          color: '#008080',
+                          fontWeight: 600,
+                          fontSize: '0.95rem',
+                          borderRadius: '8px',
+                          px: 2,
+                          py: 0.5,
+                          border: '1px solid #008080',
+                          display: 'inline-block',
+                        }}>{chip}</Box>
+                      ))}
+                    </Box>
+                    <Typography variant="body1" sx={{ 
+                      color: '#073B4C', 
+                      mb: 3, 
+                      lineHeight: 1.6,
+                      fontSize: { xs: '0.95rem', md: '1rem' },
+                      opacity: 0.8,
+                      flexGrow: 1
+                    }}>
+                      {program.description}
+                    </Typography>
+                    <Box sx={{ mb: 3 }}>
+                      {program.highlights.map((highlight, idx) => (
+                        <Box key={idx} sx={{ display: 'flex', alignItems: 'center', mb: 1.5 }}>
+                          <CheckCircleIcon sx={{ color: '#008080', fontSize: 18, mr: 1.5, flexShrink: 0 }} />
+                          <Typography variant="body2" sx={{ 
+                            color: '#073B4C', 
+                            fontWeight: 500,
+                            fontSize: '0.9rem',
+                            lineHeight: 1.4
+                          }}>
+                            {highlight}
+                          </Typography>
+                        </Box>
+                      ))}
+                    </Box>
+                    <AnimatedButton
+                      variant="outlined"
+                      size="large"
+                      href={program.link}
+                      endIcon={<ArrowForwardIcon />}
+                      sx={{
+                        borderColor: '#008080',
+                        color: '#008080',
+                        fontWeight: 700,
+                        borderRadius: '50px',
+                        textTransform: 'none',
+                        fontSize: '1rem',
+                        alignSelf: 'flex-start',
+                        px: 3,
+                        py: 1.2,
+                        '&:hover': {
+                          borderColor: '#006666',
+                          backgroundColor: 'rgba(0,128,128,0.08)',
+                          color: '#006666',
+                        },
+                      }}
+                    >
+                      Learn More
+                    </AnimatedButton>
+                  </Box>
                 </Box>
-              </Box>
-            ))}
+              );
+            })}
           </Box>
         </Container>
       </Box>

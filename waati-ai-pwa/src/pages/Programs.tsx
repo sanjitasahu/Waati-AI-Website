@@ -77,32 +77,38 @@ const Programs: React.FC = () => {
     {
       icon: <SchoolIcon sx={{ fontSize: 40 }} />,
       title: 'Interactive Workshops',
-      subtitle: 'Grades 6–8',
+      subtitle: '',
       description: 'Spark curiosity with AI fundamentals, logic puzzles, and beginner coding in Scratch or Python.',
       highlights: ['AI Fundamentals', 'Logic Puzzles', 'Scratch/Python Coding'],
       duration: '4 weeks',
-      hours: '16 hours total',
-      price: '₹5,000'
+      hours: '4 hours total',
+      price: '₹3,800',
+      skill: 'Beginner',
+      chips: ['No-Code', 'Live', 'Beginner']
     },
     {
       icon: <BusinessIcon sx={{ fontSize: 40 }} />,
       title: 'Skill-Building Bootcamps',
-      subtitle: 'Grades 9–10',
+      subtitle: '',
       description: 'Dive into machine learning basics, data ethics, and real-world case studies. Build chatbots and image classifiers.',
       highlights: ['Machine Learning', 'Data Ethics', 'Build Chatbots'],
       duration: '6 weeks',
-      hours: '24 hours total',
-      price: '₹8,000'
+      hours: '6 hours total',
+      price: '₹6,400',
+      skill: 'Intermediate',
+      chips: ['Project-Based', 'Live', 'Intermediate']
     },
     {
       icon: <TrendingUpIcon sx={{ fontSize: 40 }} />,
       title: 'Advanced Labs & Capstones',
-      subtitle: 'Grades 11–12',
+      subtitle: '',
       description: 'Deepen technical know-how with neural networks, NLP, and hands-on capstone projects showcasing innovation.',
       highlights: ['Neural Networks', 'NLP Projects', 'Capstone Showcases'],
       duration: '8 weeks',
-      hours: '32 hours total',
-      price: '₹10,000'
+      hours: '8 hours total',
+      price: '₹8,900',
+      skill: 'Advanced',
+      chips: ['Capstone', 'Live', 'Advanced']
     },
   ];
 
@@ -189,7 +195,7 @@ const Programs: React.FC = () => {
                     Play · Train · Explore
                   </Typography>
                   <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
-                    {['No-Code','4 Weeks','Live'].map(label => (
+                    {programs[0].chips.map(label => (
                       <Chip key={label} label={label} size="small" color="default" />
                     ))}
                   </Stack>
@@ -260,7 +266,7 @@ const Programs: React.FC = () => {
                     Build Real AI Projects
                   </Typography>
                   <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
-                    {['Project-Based','6 Weeks','Live'].map(label => (
+                    {programs[1].chips.map(label => (
                       <Chip key={label} label={label} size="small" color="default" />
                     ))}
                   </Stack>
@@ -331,7 +337,7 @@ const Programs: React.FC = () => {
                     Prototype & Showcase
                   </Typography>
                   <Stack direction="row" spacing={1} sx={{ mb: 1 }}>
-                    {['Capstone','8 Weeks','Live'].map(label => (
+                    {programs[2].chips.map(label => (
                       <Chip key={label} label={label} size="small" color="default" />
                     ))}
                   </Stack>

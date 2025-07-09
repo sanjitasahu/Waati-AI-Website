@@ -23,17 +23,47 @@ const Footer: React.FC = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Box sx={{ textAlign: 'center', mb: 4 }}>
-          <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
-            <Logo 
-              variant="v1" 
-              size="medium" 
-              alt="Waati AI"
-              sx={{ 
-                filter: 'brightness(0) invert(1)', // Make logo white for dark footer
-                maxHeight: 60
+        <Box sx={{ textAlign: 'center', mb: 4, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: { xs: 1, md: 2 }, mb: 2 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: { xs: 36, md: 48 },
+                width: { xs: 36, md: 48 },
+                mr: { xs: 1, md: 2 },
               }}
-            />
+            >
+              <Logo
+                variant="v1"
+                size="small"
+                alt="Waati AI Logo"
+                sx={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                  display: 'block',
+                }}
+              />
+            </Box>
+            <Typography
+              variant="h4"
+              sx={{
+                fontFamily: '"Bradley Hand", "Brush Script MT", cursive',
+                fontWeight: 700,
+                color: 'white',
+                fontSize: { xs: '1.3rem', md: '2rem' },
+                letterSpacing: '0.5px',
+                lineHeight: 1,
+                '@media (max-width:600px)': {
+                  fontSize: '1.1rem',
+                },
+              }}
+            >
+              WAATI AI
+            </Typography>
           </Box>
           <Typography variant="body2" sx={{ mb: 2 }}>
             Empowering the next generation with AI literacy and 21st-century skills.
